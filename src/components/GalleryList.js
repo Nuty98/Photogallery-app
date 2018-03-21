@@ -6,20 +6,29 @@ import CategoryItem from './CategoryItem';
 class GalleryList extends Component {
 
   generateItemList = () => {
-    if(this.props.type == "index"){
-      return this.props.galleries.map( (category, i) => {
-        return (
-          <CategoryItem key={i} category={category} /> 
-        );
-      });
-    } else {
-      return this.props.gallery.map( (picture, i) => {
-        return <GalleryItem key={i} url={picture.url} />
+    // if(this.props.type == "index"){
+    //   return this.props.galleries.map( (category, i) => {
+    //     return (
+    //       <CategoryItem key={i} category={category} /> 
+    //     );
+    //   });
+    // } else {
+    //   return this.props.gallery.map( (picture, i) => {
+    //     return <GalleryItem key={i} url={picture.url} />
+    //   });
+    // }
+
+    if(this.props.type == "index") {
+      return this.props.galleries.map( (gallery, i) => {
+        if(typeof(gallery.image) !== 'undefined')
+          return <CategoryItem key={i} category={gallery.path} imagePath={gallery.image.fullpath}/> 
+          // console.log(gallery.image.fullpath);
       });
     }
   }
   
   render() {
+    console.log(this.props.galleries);
     const items = this.generateItemList();
     return (
       <div className="row text-center">
