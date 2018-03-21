@@ -11,9 +11,9 @@ const CategoryItem = ({ category, imagePath }) => {
       >
         <div className="item">
           <div className="thumbnail">
-            <img
-              src={`http://api.programator.sk/images/500x500/${imagePath}`}
-            />
+            <img 
+              src={`http://api.programator.sk/images/0x0/${imagePath}`} 
+              />
           </div>
           <div className="categoryName">{category.toUpperCase()}</div>
         </div>
