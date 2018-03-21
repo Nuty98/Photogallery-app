@@ -36,7 +36,6 @@ class GalleryIndex extends Component {
     };
   }
 
-  generateRows = () => {};
 
   render() {
     return (
