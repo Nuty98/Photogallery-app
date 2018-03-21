@@ -7,7 +7,7 @@ import GalleryIndex from './components/GalleryIndex';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="container">
         <Routes />
       </div>
     );
