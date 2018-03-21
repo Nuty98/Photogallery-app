@@ -10,34 +10,22 @@ class GalleryIndex extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      galleries: [
-        {
-          name: 'Príroda',
-          url: require('../photos/landscape-meadow-field-mountains-66874.jpeg'),
-        },
-        {
-          name: 'Architektúra',
-          url: require('../photos/pexels-photo-261187.jpeg'),
-        },
-        {
-          name: 'Ľudia',
-          url: require('../photos/pexels-photo-27411.jpg'),
-        },
-        {
-          name: 'Jedlo',
-          url: require('../photos/food-salad-healthy-lunch.jpg'),
-        },
-        {
-          name: 'Autá',
-          url: require('../photos/pexels-photo-210019.jpeg'),
-        },
-      ],
-    };
+    this.state = { 
+      galleries: [],
+    }
   }
 
+  componentDidMount() {
+    const url = "http://api.programator.sk/gallery";
+    fetch(url)
+    .then(res => res.json())
+    .then( data => {
+      this.setState({ galleries: data.galleries })
+    })
+  }
 
   render() {
+    // console.log(this.state.galleries);
     return (
       <div>
         <div className="container">
