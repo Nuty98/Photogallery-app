@@ -8,7 +8,8 @@
 
 .item {
   height: 170px;
-  transition: 0.4s ease-out;
+  transition: 0.3s ease-out;
+  /* border-radius: 5px 5px; */
 }
 
 .item:hover {
@@ -18,14 +19,13 @@
 }
 
 
-.item .img-container {
-  width: 100%;
-  height: auto;
+.img-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   overflow: hidden;
+  height: 170px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 }
