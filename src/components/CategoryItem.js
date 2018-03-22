@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-const GalleryItem = ({ category }) => {
+const CategoryItem = ({ category, imagePath }) => {
   return (
     <div className="col-lg-3 col-md-4 col-sm-6 ">
       <Link
-        to={`/gallery/${category.name}`}
+        to={`/gallery/${category}`}
         className="link"
         style={{ textDecoration: 'none' }}
       >
         <div className="item">
-          <div className="img-container">
-            <img src={category.url} />
+          <div className="thumbnail">
+            <img 
+              src={`http://api.programator.sk/images/0x0/${imagePath}`} 
+              />
           </div>
-          <div className="category-name">{category.name.toUpperCase()}</div>
+          <div className="categoryName">{category.toUpperCase()}</div>
         </div>
       </Link>
     </div>
   );
 };
-export default GalleryItem;
+export default CategoryItem;
