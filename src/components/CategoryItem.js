@@ -10,10 +10,10 @@ const GalleryItem = ({ category }) => {
         style={{ textDecoration: 'none' }}
       >
         <div className="item">
-          <div className="thumbnail">
+          <div className="img-container">
             <img src={category.url} />
           </div>
-          <div className="categoryName">{category.name.toUpperCase()}</div>
+          <div className="category-name">{category.name.toUpperCase()}</div>
         </div>
       </Link>
     </div>
