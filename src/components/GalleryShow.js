@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GalleryList from './GalleryList';
 import NotFound from './NotFound';
+import UndefinedError from './UndefinedError';
 
 class GalleryShow extends Component {
   constructor(props) {
@@ -16,10 +17,13 @@ class GalleryShow extends Component {
   componentDidMount() {
     const url = `http://api.programator.sk/gallery/${this.props.match.params.id}`;
     fetch(url)
-      .then( res => res.json())
+      .then(res => {
+          if (res.status !== 200) 
+            throw new Error(res.status);
+          return res.json();
+        })
       .then(
         data => {
-          // console.log(data);
           this.setState({
             isLoaded: true,
             images: data.images,
@@ -35,11 +39,10 @@ class GalleryShow extends Component {
   }
 
   render() {
-    const { error, isLoaded, images} = this.state;
-    console.log(error);
+    const { error, isLoaded, images } = this.state;
     if (error) {
-      return <NotFound />
-    } else if ( !isLoaded) {
+      return error.message === '404' ? <NotFound /> : <UndefinedError />;
+    } else if (!isLoaded) {
       return <div>Loading...</div>;
     }
     return (
