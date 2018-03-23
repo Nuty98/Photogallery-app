@@ -3,6 +3,7 @@ import GalleryItem from './GalleryItem';
 import CategoryItem from './CategoryItem';
 import AddCategory from './AddCategory';
 
+class GalleryList extends Component {
   generateItemList = () => {
     if (this.props.type == 'index') {
       return this.props.galleries.map((gallery, i) => {
