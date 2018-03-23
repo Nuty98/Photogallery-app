@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import GalleryItem from './GalleryItem';
 import CategoryItem from './CategoryItem';
+import AddCategory from './AddCategory';
 
-class GalleryList extends Component {
   generateItemList = () => {
     if (this.props.type == 'index') {
       return this.props.galleries.map((gallery, i) => {
@@ -17,7 +17,12 @@ class GalleryList extends Component {
           );
         } else {
           return (
-            <CategoryItem key={i} category={gallery.path} empty={true} imagePath={null} />
+            <CategoryItem
+              key={i}
+              category={gallery.path}
+              empty={true}
+              imagePath={null}
+            />
           );
         }
       });
@@ -30,6 +35,15 @@ class GalleryList extends Component {
 
   render() {
     const items = this.generateItemList();
+    if (this.props.type === 'index') {
+      return (
+        <div className="row text-center">
+          {items}
+          <AddCategory />
+        </div>
+      );
+    }
+
     return <div className="row text-center">{items}</div>;
   }
 }
