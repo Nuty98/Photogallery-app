@@ -19,10 +19,10 @@ class GalleryShow extends Component {
     const url = `http://api.programator.sk/gallery/${this.props.match.params.id}`;
     fetch(url)
       .then(res => {
-          if (res.status !== 200) 
-            throw new Error(res.status);
-          return res.json();
-        })
+        if (res.status !== 200) 
+          throw new Error(res.status);
+        return res.json();
+      })
       .then(
         data => {
           this.setState({
@@ -44,14 +44,16 @@ class GalleryShow extends Component {
     if (error) {
       return error.message === '404' ? <NotFound /> : <UndefinedError />;
     } else if (!isLoaded) {
-      return <Loader category={this.props.match.params.id}/>;
+      return <Loader category={this.props.match.params.id} />;
     }
     return (
-      <GalleryList
-        images={images}
-        type="show"
-        category={this.props.match.params.id}
-      />
+      <div className="container">
+        <GalleryList
+          images={images}
+          type="show"
+          category={this.props.match.params.id}
+        />
+      </div>
     );
   }
 }

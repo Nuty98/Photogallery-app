@@ -46,9 +46,9 @@ class GalleryIndex extends Component {
       return <Loader />;
     }
     return (
-    <div>
-      <GalleryList galleries={galleries} type="index" />
-    </div>
+      <div className="container ">
+        <GalleryList galleries={galleries} type="index" />
+      </div>
     );
     
   }
