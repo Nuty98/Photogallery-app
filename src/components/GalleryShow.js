@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GalleryList from './GalleryList';
 import NotFound from './NotFound';
 import UndefinedError from './UndefinedError';
+import Loader from './Loader';
 
 class GalleryShow extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class GalleryShow extends Component {
     if (error) {
       return error.message === '404' ? <NotFound /> : <UndefinedError />;
     } else if (!isLoaded) {
-      return <div>Loading...</div>;
+      return <Loader category={this.props.match.params.id}/>;
     }
     return (
       <GalleryList

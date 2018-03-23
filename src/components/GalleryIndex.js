@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import GalleryList from './GalleryList';
 import UndefinedError from './UndefinedError';
-
-const photoList = [
-  // require("../photos/food-salad-healthy-lunch.jpg"),
-];
+import Loader from './Loader';
 
 class GalleryIndex extends Component {
   constructor(props) {
@@ -46,9 +43,14 @@ class GalleryIndex extends Component {
     if (error) {
       return <UndefinedError />;
     } else if (!isLoaded) {
-      return <div>Loading...</div>;
+      return <Loader />;
     }
-    return <GalleryList galleries={galleries} type="index" />;
+    return (
+    <div>
+      <GalleryList galleries={galleries} type="index" />
+    </div>
+    );
+    
   }
 }
 
