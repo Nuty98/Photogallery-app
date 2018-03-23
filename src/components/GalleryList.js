@@ -4,6 +4,10 @@ import CategoryItem from './CategoryItem';
 import AddCategory from './AddCategory';
 
 class GalleryList extends Component {
+  handleMouseEnter = (imagePath) => {
+    this.props.changeTitleImg(imagePath);
+  }
+
   generateItemList = () => {
     if (this.props.type == 'index') {
       return this.props.galleries.map((gallery, i) => {
@@ -14,6 +18,7 @@ class GalleryList extends Component {
               category={gallery.path}
               empty={false}
               imagePath={gallery.image.fullpath}
+              handleMouseEnter={this.handleMouseEnter}
             />
           );
         } else {
@@ -29,7 +34,7 @@ class GalleryList extends Component {
       });
     } else {
       return this.props.images.map((image, i) => {
-        return <GalleryItem key={i} imagePath={image.fullpath} />;
+        return <GalleryItem key={i} imagePath={image.fullpath} handleMouseEnter={this.handleMouseEnter}/>;
       });
     }
   };

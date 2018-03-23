@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GalleryList from './GalleryList';
 import UndefinedError from './UndefinedError';
 import Loader from './Loader';
+import TitleImage from './TitleImage';
 
 class GalleryIndex extends Component {
   constructor(props) {
@@ -11,15 +12,19 @@ class GalleryIndex extends Component {
       isLoaded: false,
       error: null,
       galleries: [],
+      titleImage: require("../photos/pexels-photo-261187.jpeg")
     };
   }
+
+  changeTitleImg = imagePath => {
+    this.setState({titleImage: `http://api.programator.sk/images/0x0/${imagePath}`})
+  };
 
   componentDidMount() {
     const url = 'http://api.programator.sk/gallery';
     fetch(url)
       .then(res => {
-        if (res.status !== 200) 
-          throw new Error(res.status);
+        if (res.status !== 200) throw new Error(res.status);
         return res.json();
       })
       .then(
@@ -46,11 +51,17 @@ class GalleryIndex extends Component {
       return <Loader />;
     }
     return (
-      <div className="container ">
-        <GalleryList galleries={galleries} type="index" />
+      <div>
+        <TitleImage image={this.state.titleImage}/>
+        <div className="container ">
+          <GalleryList
+            galleries={galleries}
+            type="index"
+            changeTitleImg={this.changeTitleImg}
+          />
+        </div>
       </div>
     );
-    
   }
 }
 
