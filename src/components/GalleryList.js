@@ -11,8 +11,13 @@ class GalleryList extends Component {
             <CategoryItem
               key={i}
               category={gallery.path}
+              empty={false}
               imagePath={gallery.image.fullpath}
             />
+          );
+        } else {
+          return (
+            <CategoryItem key={i} category={gallery.path} empty={true} imagePath={null} />
           );
         }
       });
