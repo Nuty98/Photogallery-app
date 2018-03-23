@@ -30,11 +30,14 @@ class GalleryShow extends Component {
       })
       .then(
         data => {
-          const titleImageUrl = `http://api.programator.sk/images/0x0/${data.images[0].fullpath}`
+          let titleImage
+          if(data.images.length > 0)
+            titleImage = `http://api.programator.sk/images/0x0/${data.images[0].fullpath}`
+          
           this.setState({
             isLoaded: true,
             images: data.images,
-            titleImage: titleImageUrl
+            titleImage
           });
         },
         error => {
