@@ -4,9 +4,9 @@ import CategoryItem from './CategoryItem';
 import AddCategory from './AddCategory';
 
 class GalleryList extends Component {
-  handleMouseEnter = (imagePath) => {
+  handleMouseEnter = imagePath => {
     this.props.changeTitleImg(imagePath);
-  }
+  };
 
   generateItemList = () => {
     if (this.props.type == 'index') {
@@ -34,7 +34,12 @@ class GalleryList extends Component {
       });
     } else {
       return this.props.images.map((image, i) => {
-        return <GalleryItem key={i} imagePath={image.fullpath} handleMouseEnter={this.handleMouseEnter}/>;
+        return (
+          <GalleryItem
+            key={i}
+            imagePath={image.fullpath}
+          />
+        );
       });
     }
   };
@@ -44,6 +49,7 @@ class GalleryList extends Component {
     if (this.props.type === 'index') {
       return (
         <div className="row text-center">
+          <hr />
           {items}
           <AddCategory />
         </div>
