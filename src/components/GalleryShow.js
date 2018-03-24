@@ -17,10 +17,6 @@ class GalleryShow extends Component {
     };
   }
 
-  changeTitleImg = imagePath => {
-    this.setState({titleImage: `http://api.programator.sk/images/0x0/${imagePath}`})
-  }
-
   componentDidMount() {
     const url = `http://api.programator.sk/gallery/${this.props.match.params.id}`;
     fetch(url)
@@ -64,7 +60,6 @@ class GalleryShow extends Component {
             images={images}
             type="show"
             category={this.props.match.params.id}
-            changeTitleImg={this.changeTitleImg}
           />
         </div>
       </div>
