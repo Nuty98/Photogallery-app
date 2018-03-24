@@ -5,7 +5,7 @@ class AddCategory extends Component {
     super(props);
 
     this.state = {
-      categoryName: "",
+      categoryName: '',
     };
   }
 
@@ -14,8 +14,28 @@ class AddCategory extends Component {
   };
 
   handleSubmit = e => {
-    console.log(`name of the new category is: ${this.state.categoryName}`);
-    this.setState({categoryName: ""})
+    const newGallery = JSON.stringify({
+      name: `${this.state.categoryName}`,
+    });
+    const header = new Headers({
+      'Content-Type': 'application/json',
+    });
+
+    fetch('http://api.programator.sk/gallery', {
+      method: 'POST',
+      body: newGallery,
+      headers: header,
+    })
+      .then(res => {
+        console.log(res);
+        if (res.status !== 201) throw new Error(res.json());
+        return res.json();
+      })
+      .then(error => {
+        console.log(error);
+      });
+
+    this.setState({ categoryName: '' });
     e.preventDefault();
   };
 
@@ -25,24 +45,23 @@ class AddCategory extends Component {
         <div
           className="add-category"
           data-toggle="modal"
-          data-target="#exampleModalCenter"
+          data-target="#add-category-modal"
         >
-         Pridať kategóriu
+          Pridať kategóriu
         </div>
 
         <div
           className="modal fade"
-          id="exampleModalCenter"
+          id="add-category-modal"
           tabIndex="-1"
           role="dialog"
-          // aria-labelledby="exampleModalCenterTitle"
-          // aria-hidden="true"
         >
-          <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div
+            className="modal-dialog modal-dialog-centered modal-lg"
+            role="document"
+          >
             <div className="modal-content">
-              <div className="modal-head">
-                <span id="">Pridať kategóriu</span>
-              </div>
+              <div className="modal-head">Pridať kategóriu</div>
               <div className="modal-body">
                 <form action="" onSubmit={this.handleSubmit}>
                   <input
@@ -53,8 +72,14 @@ class AddCategory extends Component {
                     value={this.state.categoryName}
                     required
                   />
-                  <button type="submit" className="btn btn-success add-category-submit" data-toggle="modal"
-                  data-target="#exampleModalCenter">Pridať</button>
+                  <button
+                    type="submit"
+                    className="btn btn-success add-category-submit"
+                    data-toggle="modal"
+                    data-target="#add-category-modal"
+                  >
+                    Pridať
+                  </button>
                 </form>
                 <hr />
               </div>
