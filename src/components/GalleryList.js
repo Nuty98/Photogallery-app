@@ -34,12 +34,7 @@ class GalleryList extends Component {
       });
     } else {
       return this.props.images.map((image, i) => {
-        return (
-          <GalleryItem
-            key={i}
-            imagePath={image.fullpath}
-          />
-        );
+        return <GalleryItem key={i} imagePath={image.fullpath} />;
       });
     }
   };
