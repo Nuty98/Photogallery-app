@@ -27,7 +27,7 @@ class CategoryItem extends Component {
             <div className="img-container">
               <img alt="" src={url} />
             </div>
-            <div className="category-name">{category}</div>
+            <div className="category-name">{category.toUpperCase()}</div>
           </div>
         </Link>
       </Grid.Column>
