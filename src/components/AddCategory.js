@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Grid } from 'semantic-ui-react';
 
 class AddCategory extends Component {
   constructor(props) {
@@ -41,52 +42,15 @@ class AddCategory extends Component {
 
   render() {
     return (
-      <div className="col-lg-3 col-md-4 col-sm-6">
-        <div
-          className="add-category"
-          data-toggle="modal"
-          data-target="#add-category-modal"
-        >
-          Pridať kategóriu
+      <Grid.Column
+      mobile={16}
+      tablet={8}
+      computer={4}
+      > 
+        <div className="add-category">
+          Pridat kategoriu
         </div>
-
-        <div
-          className="modal fade"
-          id="add-category-modal"
-          tabIndex="-1"
-          role="dialog"
-        >
-          <div
-            className="modal-dialog modal-dialog-centered modal-lg"
-            role="document"
-          >
-            <div className="modal-content">
-              <div className="modal-head">Pridať kategóriu</div>
-              <div className="modal-body">
-                <form action="" onSubmit={this.handleSubmit}>
-                  <input
-                    type="text"
-                    className="add-category-input"
-                    placeholder="ZADAJTE NÁZOV KATEGÓRIE"
-                    onChange={this.handleChange}
-                    value={this.state.categoryName}
-                    required
-                  />
-                  <button
-                    type="submit"
-                    className="btn btn-success add-category-submit"
-                    data-toggle="modal"
-                    data-target="#add-category-modal"
-                  >
-                    Pridať
-                  </button>
-                </form>
-                <hr />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </Grid.Column>
     );
   }
 }
