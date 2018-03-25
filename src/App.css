@@ -1,10 +1,6 @@
-.col-lg-3, .col-md-4, .col-sm-6, .col-xs-12 {
-  margin-bottom: 70px; 
-}
-
 .container {
   position: absolute;
-  top: 225px;
+  /* top: 225px; */
   left: 0;
   right: 0;
   margin-left: auto;
@@ -73,7 +69,7 @@
 }
 
 .gallery-item:hover {
-  transform: translate(0, -10px);
+  transform: translate(0, -12px);
   cursor: pointer;
 }
 
@@ -99,8 +95,11 @@
   height: 100%;
   border: 1.5px solid #e3e5e8;
   border-radius: 5px;
-  line-height: 226px;
+  line-height: 100px;
   vertical-align: middle;
+  text-align: center;
+  font-size: 16px;
+  color: #999b9a;
 }
 
 .add-category:hover {
@@ -108,24 +107,42 @@
 }
 
 .add-category-input {
-  width: 90%;
-  height: 100%;
-  /* line-height: 10px; */
-  vertical-align: bottom;
+  vertical-align: middle;
+  width: 82%;
   border: none;
-  margin-left: 0px;
+  line-height: 30px;
+}
+.add-category-input:focus {
+  outline-width: 0;
 }
 
-.add-category-submit {
-  vertical-align: bottom;
+.input-format {
+  line-height: 45px;
+  font-size: 16px;
+  /* padding-bottom: / */
 }
 
-.modal-head {
-  text-align: left;
-  text-transform: uppercase;
-  font-size: 20px;
-  padding: 20px 20px 15px;
-  /* padding-top: 0px; */
-} 
+.submit-button {
+  vertical-align: middle;
+  position: relative;
+  margin-left: 12px; 
+}
+
+.plus-icon {
+  position: relative;
+  padding: 30px 0px;
+}
+
+#modal-line {
+  background-color: #949695;
+  width: 100%;
+  height: 2px;
+  border: none;
+}
+
+.ui.modal > .header {
+  border-bottom: none;
+  font-size: 1.5rem;
+}
 
 
