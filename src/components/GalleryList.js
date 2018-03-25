@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GalleryItem from './GalleryItem';
 import CategoryItem from './CategoryItem';
 import AddCategory from './AddCategory';
+import { Grid } from 'semantic-ui-react';
 
 class GalleryList extends Component {
   handleMouseEnter = imagePath => {
@@ -16,7 +17,6 @@ class GalleryList extends Component {
             <CategoryItem
               key={i}
               category={gallery.path}
-              empty={false}
               imagePath={gallery.image.fullpath}
               handleMouseEnter={this.handleMouseEnter}
             />
@@ -26,7 +26,6 @@ class GalleryList extends Component {
             <CategoryItem
               key={i}
               category={gallery.path}
-              empty={true}
               imagePath={null}
             />
           );
@@ -43,15 +42,14 @@ class GalleryList extends Component {
     const items = this.generateItemList();
     if (this.props.type === 'index') {
       return (
-        <div className="row text-center">
-          <hr />
+        <Grid container>
           {items}
           <AddCategory />
-        </div>
+        </Grid>
       );
     }
 
-    return <div className="row text-center">{items}</div>;
+    return <Grid container>{items}</Grid>;
   }
 }
 

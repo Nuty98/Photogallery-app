@@ -1,39 +1,36 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Grid } from 'semantic-ui-react';
 
 class CategoryItem extends Component {
-  handleMouseOver = () => {
-    if(this.props.imagePath) {
+  handleMouseEnter = () => {
+    if (this.props.imagePath) {
       this.props.handleMouseEnter(this.props.imagePath);
     }
-  }
-  
+  };
+
   render() {
-    const {imagePath, category, empty} = this.props;
+    const { imagePath, category } = this.props;
     let url;
-    if (!empty) {
-      url = `http://api.programator.sk/images/0x0/${imagePath}`;
-    } else {
-      url = require('../photos/placeholder_image.gif');
-    }
+    if (imagePath) url = `http://api.programator.sk/images/0x0/${imagePath}`;
+    else url = require('../photos/placeholder_image.gif');
     return (
-      <div
-        onMouseEnter={this.handleMouseOver}
-        className="col-lg-3 col-md-4 col-sm-6"
+      <Grid.Column
+        mobile={16}
+        tablet={8}
+        computer={4}
+        className="col-semantic"
+        onMouseEnter={this.handleMouseEnter}
       >
-        <Link
-          to={`/gallery/${category}`}
-          className="link"
-          style={{ textDecoration: 'none' }}
-        >
+        <Link to={`/gallery/${category}`} className="link">
           <div className="item">
             <div className="img-container">
               <img alt="" src={url} />
             </div>
-            <div className="category-name">{category.toUpperCase()}</div>
+            <div className="category-name">{category}</div>
           </div>
         </Link>
-      </div>
+      </Grid.Column>
     );
   }
 }
