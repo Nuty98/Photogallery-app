@@ -53,13 +53,11 @@ class GalleryIndex extends Component {
     return (
       <div>
         <TitleImage image={this.state.titleImage}/>
-        <div className="container ">
           <GalleryList
             galleries={galleries}
             type="index"
             changeTitleImg={this.changeTitleImg}
           />
-        </div>
       </div>
     );
   }

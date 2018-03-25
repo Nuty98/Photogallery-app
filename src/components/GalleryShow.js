@@ -5,6 +5,7 @@ import UndefinedError from './UndefinedError';
 import Loader from './Loader';
 import TitleImage from './TitleImage';
 
+
 class GalleryShow extends Component {
   constructor(props) {
     super(props);
@@ -55,13 +56,11 @@ class GalleryShow extends Component {
     return (
       <div>
         <TitleImage image={titleImage}/>
-        <div className="container">
           <GalleryList
             images={images}
             type="show"
             category={this.props.match.params.id}
           />
-        </div>
       </div>
     );
   }
