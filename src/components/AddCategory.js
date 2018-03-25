@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Modal, Header, Button, Icon } from 'semantic-ui-react';
 
 class AddCategory extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      categoryName: '',
+      categoryName: "",
+      showModal: false
     };
   }
 
@@ -36,20 +37,58 @@ class AddCategory extends Component {
         console.log(error);
       });
 
-    this.setState({ categoryName: '' });
+    this.setState({ categoryName: '', showModal: false });
     e.preventDefault();
   };
 
+  openModal = () => {
+    this.setState({
+      showModal: true
+    })
+  }
+
+  closeModal = () => {
+    this.setState({
+      showModal: false
+    })
+  }
+
   render() {
     return (
-      <Grid.Column
-      mobile={16}
-      tablet={8}
-      computer={4}
-      > 
-        <div className="add-category">
-          Pridat kategoriu
-        </div>
+      <Grid.Column mobile={16} tablet={8} computer={4}>
+        <Modal
+          trigger={
+                    <div onClick={this.openModal} add circle className="add-category">              
+                      <Icon name="plus circle" size="huge" className="plus-icon"/>
+                      <br />
+                      <strong>PRIDAŤ KATEGÓRIU</strong>
+                    </div>
+                  }
+          size="small"
+          closeIcon
+          open={this.state.showModal}
+          onClose={this.closeModal}
+        >
+          <Header>PRIDAŤ KATEGÓRIU</Header>
+          <Modal.Content>
+            <form action="" onSubmit={this.handleSubmit}>
+              <div className="input-format">
+                <input
+                  type="text"
+                  placeholder="ZADAJTE NÁZOV KATEGÓRIE"
+                  onChange={this.handleChange}
+                  value={this.state.categoryName}
+                  className="add-category-input"
+                  required
+                />
+                <span className="submit-button">
+                  <Button content="PRIDAŤ" icon="plus" color="green" />
+                </span>
+              </div>
+            </form>
+            <hr id="modal-line"/>
+          </Modal.Content>
+        </Modal>
       </Grid.Column>
     );
   }
