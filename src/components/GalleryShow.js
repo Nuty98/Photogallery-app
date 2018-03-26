@@ -4,7 +4,7 @@ import NotFound from './NotFound';
 import UndefinedError from './UndefinedError';
 import Loader from './Loader';
 import TitleImage from './TitleImage';
-
+import ImageSlider from './ImigeSlider.js/ImageSlider';
 
 class GalleryShow extends Component {
   constructor(props) {
@@ -14,12 +14,16 @@ class GalleryShow extends Component {
       isLoaded: false,
       error: null,
       images: [],
-      titleImage: null
+      titleImage: null,
+      isSliderOpen: false,
+      clickedPhotoIndex: null
     };
   }
 
   componentDidMount() {
-    const url = `http://api.programator.sk/gallery/${this.props.match.params.id}`;
+    const url = `http://api.programator.sk/gallery/${
+      this.props.match.params.id
+    }`;
     fetch(url)
       .then(res => {
         if (res.status !== 200) throw new Error(res.status);
@@ -27,14 +31,16 @@ class GalleryShow extends Component {
       })
       .then(
         data => {
-          let titleImage
-          if(data.images.length > 0)
-            titleImage = `http://api.programator.sk/images/0x0/${data.images[0].fullpath}`
-          
+          let titleImage;
+          if (data.images.length > 0)
+            titleImage = `http://api.programator.sk/images/0x0/${
+              data.images[0].fullpath
+            }`;
+
           this.setState({
             isLoaded: true,
             images: data.images,
-            titleImage
+            titleImage,
           });
         },
         error => {
@@ -48,6 +54,7 @@ class GalleryShow extends Component {
 
   render() {
     const { error, isLoaded, images, titleImage } = this.state;
+    const imageUrls = images.map((image, key) => `http://api.programator.sk/images/1024x576/${image.fullpath}`);
     if (error) {
       return error.message === '404' ? <NotFound /> : <UndefinedError />;
     } else if (!isLoaded) {
@@ -55,12 +62,21 @@ class GalleryShow extends Component {
     }
     return (
       <div>
-        <TitleImage image={titleImage}/>
-          <GalleryList
-            images={images}
-            type="show"
-            category={this.props.match.params.id}
-          />
+        <TitleImage image={titleImage} />
+        <GalleryList
+          images={images}
+          type="show"
+          category={this.props.match.params.id}
+          handleGalleryItemClick={(index) => {
+            this.setState({ isSliderOpen: true, clickedPhotoIndex: index});
+          }}
+        />
+        <ImageSlider
+          images={imageUrls}
+          isSliderOpen={this.state.isSliderOpen}
+          handleClose={() => this.setState({ isSliderOpen: false })}
+          clickedPhotoIndex={this.state.clickedPhotoIndex}
+        />
       </div>
     );
   }
