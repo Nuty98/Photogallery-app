@@ -58,7 +58,7 @@ class AddCategory extends Component {
       <Grid.Column mobile={16} tablet={8} computer={4}>
         <Modal
           trigger={
-                    <div onClick={this.openModal} add circle className="add-category">              
+                    <div onClick={this.openModal}  className="add-category">              
                       <Icon name="plus circle" size="huge" className="plus-icon"/>
                       <br />
                       <strong>PRIDAŤ KATEGÓRIU</strong>
