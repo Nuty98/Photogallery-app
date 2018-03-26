@@ -1,0 +1,26 @@
+.add-image {
+  width: 100%;
+  height: 226px;
+  border: 1.5px solid #e3e5e8;
+  border-radius: 5px;
+  line-height: 100px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 16px;
+  color: #999b9a;
+  transition: 0.3s ease-out;
+}
+
+.add-image:hover {
+  transform: translate(0, -12px);
+  cursor: pointer;
+}
+
+.add-image-input {
+  line-height: 200px;
+  vertical-align: middle;
+  text-align: center;
+  border: 2px dashed black;
+  
+}
+
