@@ -1,3 +1,8 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.7px;
+}
+
 .container {
   position: absolute;
   /* top: 225px; */
@@ -100,10 +105,12 @@
   text-align: center;
   font-size: 16px;
   color: #999b9a;
+  transition: 0.3s ease-out;
 }
 
 .add-category:hover {
   cursor: pointer;
+  transform: translate(0, -12px);
 }
 
 .add-category-input {
@@ -119,13 +126,13 @@
 .input-format {
   line-height: 45px;
   font-size: 16px;
-  /* padding-bottom: / */
+
 }
 
 .submit-button {
   vertical-align: middle;
   position: relative;
-  margin-left: 12px; 
+  margin-left: 6px; 
 }
 
 .plus-icon {
