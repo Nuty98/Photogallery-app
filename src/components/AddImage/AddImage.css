@@ -1,11 +1,13 @@
 .add-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 226px;
   border: 1.5px solid #e3e5e8;
   border-radius: 5px;
-  line-height: 100px;
-  vertical-align: middle;
-  text-align: center;
+  line-height: 30px;
   font-size: 16px;
   color: #999b9a;
   transition: 0.3s ease-out;
@@ -16,11 +18,75 @@
   cursor: pointer;
 }
 
-.add-image-input {
-  line-height: 200px;
-  vertical-align: middle;
-  text-align: center;
-  border: 2px dashed black;
-  
+.add-image-form {
+  border: 2px dashed #e3e5e8;
+  color: #999b9a;
 }
 
+
+.dropzone {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  border: none;
+  width: 100%;
+  height: 150px;
+  font-size: 1.3em;
+}
+
+
+#upload-image-input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-input-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+#label-image-input {
+  cursor: pointer;
+  border: 2.5px solid #999b9a;
+  border-radius: .28571429rem;
+  padding: 10px 0px 15px;
+  width: 200px;
+  height: 45px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 500;
+}
+
+#label-image-input:hover {
+  background: #e5eae7;
+}
+
+.submit-button-image {
+  display: flex;
+  height: 40px;
+}
+
+.button-div {
+  display: flex;
+  justify-content: flex-end;
+  height: 90px;
+  align-items: center;
+}
+
+.ui .button {
+  background-color: #4bd183;
+  color: white;
+}
+
+.ui .button:hover {
+  background-color: #45b272;
+  color: white;
+}
+
+.ui.modal > .content {
+  padding: 0px 25px;
+}
