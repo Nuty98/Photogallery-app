@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import GalleryList from './GalleryList';
-import UndefinedError from './UndefinedError';
-import Loader from './Loader';
-import TitleImage from './TitleImage';
+import GalleryList from '../GalleryList/GalleryList';
+import UndefinedError from '../UndefinedError';
+import Loader from '../Loader/Loader';
+import TitleImage from '../TitleImage/TitleImage';
 
 class GalleryIndex extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class GalleryIndex extends Component {
       isLoaded: false,
       error: null,
       galleries: [],
-      titleImage: require("../photos/pexels-photo-261187.jpeg")
+      titleImage: require("../../photos/pexels-photo-261187.jpeg")
     };
   }
 

@@ -15,7 +15,7 @@ class CategoryItem extends Component {
     if (imagePath) 
       url = `http://api.programator.sk/images/1024x576/${imagePath}`;
     else 
-      url = require('../photos/placeholder_image.gif');
+      url = require('../../photos/placeholder_image.gif');
     return (
       <Grid.Column
         mobile={16}

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import GalleryItem from './GalleryItem';
-import CategoryItem from './CategoryItem';
-import AddCategory from './AddCategory';
-import AddImage from './AddImage/AddImage';
+import GalleryItem from '../GalleryItem/GalleryItem';
+import CategoryItem from '../CategoryItem/CategoryItem';
+import AddCategory from '../AddCategory/AddCategory';
+import AddImage from '../AddImage/AddImage';
 import { Grid } from 'semantic-ui-react';
 
 class GalleryList extends Component {
