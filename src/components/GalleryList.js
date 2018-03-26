@@ -60,7 +60,7 @@ class GalleryList extends Component {
     return (
       <Grid container>
         {items}
-        <AddImage />
+        <AddImage category={this.props.category}/>
       </Grid>
     );
   }
