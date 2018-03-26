@@ -12,8 +12,10 @@ class CategoryItem extends Component {
   render() {
     const { imagePath, category } = this.props;
     let url;
-    if (imagePath) url = `http://api.programator.sk/images/0x0/${imagePath}`;
-    else url = require('../photos/placeholder_image.gif');
+    if (imagePath) 
+      url = `http://api.programator.sk/images/1024x576/${imagePath}`;
+    else 
+      url = require('../photos/placeholder_image.gif');
     return (
       <Grid.Column
         mobile={16}
