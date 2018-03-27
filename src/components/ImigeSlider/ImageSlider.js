@@ -51,7 +51,7 @@ ImageSlider.propTypes = {
   images: PropTypes.array.isRequired,
   isSliderOpen: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
-  clickedPhotoIndex: PropTypes.number.isRequired
+  clickedPhotoIndex: PropTypes.number
 }
 
 export default ImageSlider;
