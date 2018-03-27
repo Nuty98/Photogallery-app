@@ -1,8 +1,7 @@
 .link {
-  color: black;
+  color: #555555;
+  font-weight: 500;
 }
-
-
 
 @media only screen and (max-width: 767px) and (min-width: 320px){
   .category-item{
@@ -28,7 +27,7 @@
 .category-item:hover {
   transform: translate(0,-12px);
   cursor: pointer;
-  color: #298e2b;
+  color: #555555;
 }
 
 .category-item img {
