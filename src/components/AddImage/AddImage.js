@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styles from './AddImage.css';
 import { Grid, Modal, Header, Button, Icon } from 'semantic-ui-react';
 import ModalContent from 'semantic-ui-react';
 import Dropzone from 'react-dropzone';
 
 
-// eslint-disable-next-line
 class AddImage extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +17,6 @@ class AddImage extends Component {
   }
 
   handleChange = e => {
-    // console.log(this.state.imagesToAdd);
     let imagesToAddCpy = this.state.imagesToAdd;
     imagesToAddCpy.push(e.target.value);
     this.setState({imagesToAdd: imagesToAddCpy});
@@ -78,6 +77,10 @@ class AddImage extends Component {
       </Grid.Column>
     );
   }
+}
+
+AddImage.propTypes = {
+  category: PropTypes.string.isRequired,
 }
 
 export default AddImage;
