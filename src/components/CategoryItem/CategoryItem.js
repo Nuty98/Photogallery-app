@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react';
 import styling from './CategoryItem.css';
@@ -36,4 +37,11 @@ class CategoryItem extends Component {
     );
   }
 }
+
+CategoryItem.propTypes = {
+  imagePath: PropTypes.string,
+  category: PropTypes.string.isRequired,
+  handleMouseEnter: PropTypes.func
+}
+
 export default CategoryItem;
