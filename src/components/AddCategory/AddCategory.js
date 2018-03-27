@@ -61,7 +61,7 @@ class AddCategory extends Component {
           trigger={
                     <div onClick={this.openModal}  className="add-category">      
                       <Icon name="plus circle" size="big" className="plus-icon"/>
-                      <strong>PRIDAŤ KATEGÓRIU</strong>        
+                      PRIDAŤ KATEGÓRIU
                     </div>
                   }
           size="small"

@@ -85,7 +85,7 @@
   align-items: center;
 }
 
-.ui .button {
+.ui .button-div .button {
   background-color: #42c88d;
   color: white;
 }

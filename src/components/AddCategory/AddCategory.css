@@ -1,7 +1,7 @@
 .add-category {
   width: 100%;
   height: 225px;
-  border: 1.5px solid #e3e5e8;
+  border: 1.5px solid #eeeeee;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,8 @@
   align-items: center;
   line-height: 30px;
   font-size: 16px;
-  color: #999b9a;
+  font-weight: 500;
+  color: #aaaaaa;
   transition: 0.3s ease-out;
 }
 
@@ -48,7 +49,7 @@
 }
 
 .ui .button {
-  background-color: #4bd183;
+  background-color: #42c88d;
   color: white;
   height: 45px;
 }
@@ -68,7 +69,7 @@
 }
 
 #modal-line {
-  background-color: #e3e5e8;
+  background-color: #eeeeee;
   width: 100%;
   height: 2px;
   border: none; 
