@@ -11,7 +11,7 @@ class CategoryItem  extends Component {
   }
   
   render(){  
-    const { imagePath, category} = this.props;
+    const { imagePath, categoryName, categoryPath} = this.props;
     let url;
     if (imagePath) 
       url = `http://api.programator.sk/images/1024x576/${imagePath}`;
@@ -25,12 +25,12 @@ class CategoryItem  extends Component {
         computer={4}
         onMouseEnter={this.handleMouseEnter}
       >
-        <Link to={`/gallery/${category}`} className="link">
+        <Link to={`/gallery/${categoryPath}`} className="link">
           <div className="category-item">
             <div className="img-container">
               <img alt="" src={url} />
             </div>
-            <div className="category-name">{category.toUpperCase()}</div>
+            <div className="category-name">{categoryName.toUpperCase()}</div>
           </div>
         </Link>
       </Grid.Column>
@@ -39,7 +39,8 @@ class CategoryItem  extends Component {
 }
 
 CategoryItem.propTypes = {
-  category: PropTypes.string.isRequired,
+  categoryName: PropTypes.string.isRequired,
+  categoryPath: PropTypes.string.isRequired,
   imagePath: PropTypes.string,
   handleMouseEnter: PropTypes.func
 }

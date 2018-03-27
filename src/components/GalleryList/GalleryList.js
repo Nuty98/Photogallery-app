@@ -22,14 +22,15 @@ class GalleryList extends Component {
           return (
             <CategoryItem
               key={i}
-              category={gallery.path}
+              categoryName={gallery.name}
+              categoryPath={gallery.path}
               imagePath={gallery.image.fullpath}
               handleMouseEnter={this.handleMouseEnter}
             />
           );
         } else {
           return (
-            <CategoryItem key={i} category={gallery.path} imagePath={null} />
+            <CategoryItem key={i} categoryName={gallery.name} categoryPath={gallery.path} imagePath={null} />
           );
         }
       });
