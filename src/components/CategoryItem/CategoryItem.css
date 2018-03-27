@@ -19,6 +19,10 @@
     width: 302px;
     margin: auto;
   }
+
+  img {
+    width: 100%;
+  }
 }
 
 .category-item {
@@ -31,7 +35,7 @@
 }
 
 .category-item img {
-  height: 170px;
+  height: 150px;
 }
 
 .img-container {
