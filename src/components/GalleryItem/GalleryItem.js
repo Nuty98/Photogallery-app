@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from 'semantic-ui-react';
+import './GalleryItem.css';
 
 const GalleryItem = ({ imagePath, index, handleGalleryItemClick }) => {
   

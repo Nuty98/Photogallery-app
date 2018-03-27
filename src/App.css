@@ -10,41 +10,10 @@ body {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  /* margin-top: 500px; */
 }
 
 
-.gallery-item {
-  transition: 0.3s ease-out;
-}
 
-.img-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  border-top: 1px solid transparent;
-  border-right: 1px solid transparent;
-  border-left: 1px solid transparent;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-}
-
-.gallery-item .img-container {
-  border-bottom: 1px solid transparent;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.gallery-item:hover {
-  transform: translate(0, -12px);
-  cursor: pointer;
-}
-
-.gallery-item img {
-  height: 255px;
-}
 
 
 
