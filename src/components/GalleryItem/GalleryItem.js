@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid } from 'semantic-ui-react';
 
 const GalleryItem = ({ imagePath, index, handleGalleryItemClick }) => {
@@ -16,4 +17,11 @@ const GalleryItem = ({ imagePath, index, handleGalleryItemClick }) => {
     </Grid.Column>
   );
 };
+
+GalleryItem.propTypes = {
+  imagePath: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
+  handleGalleryItemClick: PropTypes.func.isRequired
+}
+
 export default GalleryItem;
