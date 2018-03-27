@@ -1,14 +1,14 @@
-.title-image img {
-  filter: blur(6px) brightness(85%);
+#title-image-container {
+  width: 100%;
+  overflow: hidden;
 }
 
 .title-image {
-  margin-top: -20px;
-  position: absolute;
+  margin: -3px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  width: 100%;
+  width: 102%;
   height: 300px;
   filter: blur(6px) brightness(85%);
 }

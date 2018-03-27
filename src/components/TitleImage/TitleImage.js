@@ -3,7 +3,12 @@ import styling from './TitleImage.css';
 
 const TitleImage = ({ image }) => {
   return (
-    <div className="title-image" style={{ backgroundImage: `url(${image})` }} />
+    <div id="title-image-container">
+      <div
+        className="title-image"
+        style={{ backgroundImage: `url(${image})` }}
+      />
+    </div>
   );
 };
 
