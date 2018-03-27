@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Lightbox from 'react-image-lightbox';
 
 class ImageSlider extends Component {
@@ -16,11 +17,12 @@ class ImageSlider extends Component {
 
   render() {
     const { photoIndex } = this.state;
-    const { images, isSliderOpen, handleClose, clickedPhotoIndex } = this.props;
+    const { images, isSliderOpen, handleClose } = this.props;
     return (
       <div>
         {isSliderOpen && (
           <Lightbox
+            enableZoom={false}
             mainSrc={images[photoIndex]}
             nextSrc={images[(photoIndex + 1) % images.length]}
             prevSrc={
@@ -43,6 +45,13 @@ class ImageSlider extends Component {
       </div>
     );
   }
+}
+
+ImageSlider.propTypes = {
+  images: PropTypes.array.isRequired,
+  isSliderOpen: PropTypes.bool.isRequired,
+  handleClose: PropTypes.func.isRequired,
+  clickedPhotoIndex: PropTypes.number.isRequired
 }
 
 export default ImageSlider;
