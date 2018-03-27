@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Modal, Header, Button, Icon } from 'semantic-ui-react';
+import styling from './AddCategory.css'
 
 class AddCategory extends Component {
   constructor(props) {
@@ -58,10 +59,9 @@ class AddCategory extends Component {
       <Grid.Column mobile={16} tablet={8} computer={4}>
         <Modal
           trigger={
-                    <div onClick={this.openModal}  className="add-category">              
-                      <Icon name="plus circle" size="huge" className="plus-icon"/>
-                      <br />
-                      <strong>PRIDAŤ KATEGÓRIU</strong>
+                    <div onClick={this.openModal}  className="add-category">      
+                      <Icon name="plus circle" size="big" className="plus-icon"/>
+                      <strong>PRIDAŤ KATEGÓRIU</strong>        
                     </div>
                   }
           size="small"
@@ -72,7 +72,7 @@ class AddCategory extends Component {
           <Header>PRIDAŤ KATEGÓRIU</Header>
           <Modal.Content>
             <form action="" onSubmit={this.handleSubmit}>
-              <div className="input-format">
+              <div className="category-form">
                 <input
                   type="text"
                   placeholder="ZADAJTE NÁZOV KATEGÓRIE"
@@ -82,11 +82,13 @@ class AddCategory extends Component {
                   required
                 />
                 <span className="submit-button">
-                  <Button content="PRIDAŤ" icon="plus" color="green" />
+                  <Button content="PRIDAŤ" icon="plus" />
                 </span>
               </div>
             </form>
-            <hr id="modal-line"/>
+            <div id="line-div">        
+              <hr id="modal-line"/>
+            </div>
           </Modal.Content>
         </Modal>
       </Grid.Column>

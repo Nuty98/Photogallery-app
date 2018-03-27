@@ -1,0 +1,62 @@
+.add-category {
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid #e3e5e8;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 30px;
+  font-size: 16px;
+  color: #999b9a;
+  transition: 0.3s ease-out;
+}
+
+.add-category:hover {
+  cursor: pointer;
+  transform: translate(0, -12px);
+}
+
+
+.category-form {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+}
+
+.add-category-input {
+  width: 80%;
+  border: none;
+  font-weight: 500;
+  height: 50px;
+  
+}
+
+.ui .button {
+  background-color: #4bd183;
+  color: white;
+  height: 45px;
+}
+
+.ui .button:hover {
+  background-color: #45b272;
+  color: white;
+}
+
+.ui.modal > .header {
+  border-bottom: none;
+  font-size: 1.5rem;
+}
+
+#line-div {
+  /* padding: 30px; */
+  height: 20px;
+}
+
+#modal-line {
+  background-color: #e3e5e8;
+  width: 100%;
+  height: 2px;
+  border: none; 
+}
