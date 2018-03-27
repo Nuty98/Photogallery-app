@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import GalleryItem from '../GalleryItem/GalleryItem';
 import CategoryItem from '../CategoryItem/CategoryItem';
 import AddCategory from '../AddCategory/AddCategory';
@@ -15,7 +16,7 @@ class GalleryList extends Component {
   };
 
   generateItemList = () => {
-    if (this.props.type == 'index') {
+    if (this.props.type === 'index') {
       return this.props.galleries.map((gallery, i) => {
         if (typeof gallery.image !== 'undefined') {
           return (
@@ -64,6 +65,14 @@ class GalleryList extends Component {
       </Grid>
     );
   }
+}
+
+GalleryList.propTypes = {
+  type: PropTypes.string.isRequired,
+  galleries: PropTypes.array,
+  images: PropTypes.array,
+  handleMouseEnter: PropTypes.func,
+  handleGalleryItemClick: PropTypes.func
 }
 
 export default GalleryList;
