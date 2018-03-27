@@ -5,11 +5,12 @@ body {
 
 .container {
   position: absolute;
-  /* top: 225px; */
+  top: 225px;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
+  /* margin-top: 500px; */
 }
 
 
@@ -44,18 +45,6 @@ body {
 .gallery-item img {
   height: 255px;
 }
-.title-image img {
-  filter: blur(6px) brightness(85%);
-  /* margin-top: -150px; */
-}
 
-.title-image {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  height: 200px;
-}
 
 
