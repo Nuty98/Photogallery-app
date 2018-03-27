@@ -1,6 +1,6 @@
 .add-category {
   width: 100%;
-  height: 254px;
+  height: 225px;
   border: 1.5px solid #e3e5e8;
   border-radius: 5px;
   display: flex;
@@ -11,6 +11,20 @@
   font-size: 16px;
   color: #999b9a;
   transition: 0.3s ease-out;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 320px){
+  .add-category {
+    width: 321px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px){
+  .add-category{
+    width: 302px;
+    margin: auto;
+  }
 }
 
 .add-category:hover {
@@ -50,7 +64,6 @@
 }
 
 #line-div {
-  /* padding: 30px; */
   height: 20px;
 }
 
