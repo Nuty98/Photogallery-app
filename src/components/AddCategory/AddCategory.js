@@ -53,14 +53,18 @@ class AddCategory extends Component {
       showModal: false
     })
   }
-
+  
   render() {
     return (
       <Grid.Column mobile={16} tablet={8} computer={4}>
         <Modal
           trigger={
                     <div onClick={this.openModal}  className="add-category">      
-                      <Icon name="plus circle" size="big" className="plus-icon"/>
+                      <svg className="add-category-svg">
+                        <image href={require("../../icons/add_category.svg")} height="40" width="40" 
+                          style={{fill: "#aaaaaa"}}
+                        />
+                      </svg>
                       PRIDAŤ KATEGÓRIU
                     </div>
                   }
