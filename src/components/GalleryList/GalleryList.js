@@ -5,6 +5,8 @@ import CategoryItem from '../CategoryItem/CategoryItem';
 import AddCategory from '../AddCategory/AddCategory';
 import AddImage from '../AddImage/AddImage';
 import { Grid } from 'semantic-ui-react';
+import './GalleryList.css'
+
 
 class GalleryList extends Component {
   handleMouseEnter = imagePath => {
