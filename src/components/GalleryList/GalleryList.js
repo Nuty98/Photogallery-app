@@ -18,19 +18,20 @@ class GalleryList extends Component {
   generateItemList = () => {
     if (this.props.type === 'index') {
       return this.props.galleries.map((gallery, i) => {
-        if (typeof gallery.image !== 'undefined') {
+        if (gallery.image != null) {
           return (
             <CategoryItem
               key={i}
               categoryName={gallery.name}
               categoryPath={gallery.path}
               imagePath={gallery.image.fullpath}
+              galleryLength={gallery.length}
               handleMouseEnter={this.handleMouseEnter}
             />
           );
         } else {
           return (
-            <CategoryItem key={i} categoryName={gallery.name} categoryPath={gallery.path} imagePath={null} />
+            <CategoryItem key={i} categoryName={gallery.name} categoryPath={gallery.path} imagePath={null} galleryLength={0}/>
           );
         }
       });

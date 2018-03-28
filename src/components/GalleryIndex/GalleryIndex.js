@@ -12,13 +12,47 @@ class GalleryIndex extends Component {
       isLoaded: false,
       error: null,
       galleries: [],
-      titleImage: require("../../photos/pexels-photo-261187.jpeg")
+      titleImage: null,
     };
   }
 
   changeTitleImg = imagePath => {
-    this.setState({titleImage: `http://api.programator.sk/images/0x0/${imagePath}`})
+    this.setState({
+      titleImage: `http://api.programator.sk/images/0x0/${imagePath}`,
+    });
   };
+
+  compareGalleries = (first, second) => {
+    return first.name.localeCompare(second.name);
+  }
+
+  findGalleryLength = (gallery, index) => {
+    const url = `http://api.programator.sk/gallery/${
+      gallery.path
+    }`;
+    fetch(url)
+      .then(res => {
+        if (res.status !== 200) throw new Error(res.status);
+        return res.json();
+      })
+      .then(
+        data => {
+          let galleries = this.state.galleries;
+          galleries[index].length = data.images.length
+          this.setState({
+            isLoaded: true,
+            galleries
+          })
+
+        },
+        error => {
+          this.setState({
+            isLoaded: true,
+            error,
+          });
+        },
+      )
+  }
 
   componentDidMount() {
     const url = 'http://api.programator.sk/gallery';
@@ -29,10 +63,19 @@ class GalleryIndex extends Component {
       })
       .then(
         data => {
+          let initTitleImage;
+          data.galleries.sort(this.compareGalleries);
+          for (let i = 0; i < data.galleries.length; i++) {
+            if (data.galleries[i].image != null) {
+              initTitleImage = data.galleries[i].image.fullpath;
+              break;
+            }
+          }
           this.setState({
-            isLoaded: true,
             galleries: data.galleries,
+            titleImage: `http://api.programator.sk/images/0x0/${initTitleImage}`,
           });
+          this.state.galleries.map((gallery, index) => this.findGalleryLength(gallery, index));
         },
         error => {
           this.setState({
@@ -44,7 +87,7 @@ class GalleryIndex extends Component {
   }
 
   render() {
-    const { isLoaded, error, galleries } = this.state;
+    const { isLoaded, error, galleries, titleImage } = this.state;
     if (error) {
       return <UndefinedError />;
     } else if (!isLoaded) {
@@ -52,12 +95,12 @@ class GalleryIndex extends Component {
     }
     return (
       <div>
-        <TitleImage image={this.state.titleImage}/>
-          <GalleryList
-            galleries={galleries}
-            type="index"
-            changeTitleImg={this.changeTitleImg}
-          />
+        <TitleImage currentImage={titleImage} />
+        <GalleryList
+          galleries={galleries}
+          type="index"
+          changeTitleImg={this.changeTitleImg}
+        />
       </div>
     );
   }
