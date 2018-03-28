@@ -49,7 +49,7 @@ class GalleryShow extends Component {
             error,
           });
         },
-      );
+      )
   }
 
   render() {
@@ -62,7 +62,7 @@ class GalleryShow extends Component {
     }
     return (
       <div>
-        <TitleImage image={titleImage} />
+        <TitleImage currentImage={titleImage} />
         <GalleryList
           images={images}
           type="show"
