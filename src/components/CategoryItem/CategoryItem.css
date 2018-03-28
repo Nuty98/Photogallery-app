@@ -25,22 +25,19 @@
   }
 }
 
-
-
 .category-item {
   transition: 0.4s ease-in-out;
 }
 .category-item:hover {
-  transform: translate(0,-12px);
+  transform: translate(0,-10px);
   cursor: pointer;
   color: #555555;
   z-index: 1;
   position: relative;
 }
 
-
 .category-item img {
-  height: 150px;
+  height: 158px;
 }
 
 .img-container {
@@ -49,16 +46,13 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  border-top: 1px solid transparent;
-  border-right: 1px solid transparent;
-  border-left: 1px solid transparent;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   transition: max-height 0.5s ease-in-out;
 }
 
 .category-item:hover .img-container {
- max-height: 130px;
+ height: 127px;
 }
 
 .category-name {
@@ -66,17 +60,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 55px;
-  background: white;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  box-shadow: -1px 1px 2px rgb(219, 221, 224), 1px 1px 2px rgb(219, 221, 224);
+  height: 58px;
+  font-size: 16px;
+  font-weight: 500;
+  background: #f9f9f9;;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow: -0.5px 0.5px 0.5px rgb(219, 221, 224), 0.5px 0.5px 0.5px rgb(219, 221, 224);
   transition: max-height 0.5s ease-in-out;
 }
 
 .category-item:hover .category-name {
-  box-shadow: -1px 1px 2px 1px rgb(219, 221, 224), 1px 1px 2px 1px rgb(219, 221, 224);
-  max-height: 75px;
+  box-shadow: -0.5px 0.5px 1.5px 1.5px rgb(219, 221, 224), 0.5px 0.5px 1.5px 1.5px rgb(219, 221, 224);
+  height: 89px;
 }
 
 .length-message {
@@ -86,5 +82,7 @@
 .category-item:hover .length-message {
   display: block;
   color: #b9b9b9;
+  line-height: 31px;
   font-size: 1rem;
+  letter-spacing: 0.8px;
 }

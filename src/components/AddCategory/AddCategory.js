@@ -62,8 +62,7 @@ class AddCategory extends Component {
                     <div onClick={this.openModal}  className="add-category">      
                       <svg className="add-category-svg">
                         <image href={require("../../icons/add_category.svg")} height="40" width="40" 
-                          style={{fill: "#aaaaaa"}}
-                        />
+                        style={{fill: "#aaaaaa"}} />
                       </svg>
                       PRIDAŤ KATEGÓRIU
                     </div>
