@@ -54,6 +54,7 @@ class AddCategory extends Component {
 
   closeModal = () => {
     this.setState({
+      categoryName: '',
       showModal: false,
     });
   };
