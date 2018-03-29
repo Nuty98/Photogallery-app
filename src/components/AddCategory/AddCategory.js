@@ -63,11 +63,7 @@ class AddCategory extends Component {
           trigger={
             <div onClick={this.openModal} className="add-category">
               <svg className="add-category-svg">
-                <image
-                  href={`${add_category}`}
-                  height="40"
-                  width="40"
-                />
+                <image href={`${add_category}`} />
               </svg>
               PRIDAŤ KATEGÓRIU
             </div>
@@ -80,7 +76,6 @@ class AddCategory extends Component {
           <Modal.Content>
             <div className="add-category-header">
               PRIDAŤ KATEGÓRIU
-              
             </div>
             <form action="" onSubmit={this.handleSubmit}>
               <div className="category-form">
