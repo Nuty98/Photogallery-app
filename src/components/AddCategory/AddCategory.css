@@ -56,11 +56,6 @@
   padding-bottom: 30px;
 }
 
-.close-svg {
-  position: relative;
-  margin-left: 30px;
-  margin-bottom: 40px; 
-}
 
 .add-category-input {
   width: 78%;
@@ -77,6 +72,8 @@
 
 .add-svg {
   margin-top: 3px;
+  height: 14px;
+  width: 14px;
 }
 
 .add-category-button-message {

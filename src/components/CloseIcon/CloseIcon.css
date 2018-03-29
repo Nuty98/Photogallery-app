@@ -50,4 +50,7 @@
   .close-modal {
     left: 87%;
   }
+  .add-category-header .close-modal {
+    bottom: 107px;
+  }
 }

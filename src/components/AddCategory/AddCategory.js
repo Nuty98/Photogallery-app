@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Grid, Modal, Button, Icon } from 'semantic-ui-react';
+import { Grid, Modal, Button } from 'semantic-ui-react';
 import styling from './AddCategory.css';
 import add_category from '../../icons/add_category.svg';
 import add from '../../icons/add.svg';
+import Icon from '../Icon';
+import CloseIcon from '../CloseIcon/CloseIcon';
 
 class AddCategory extends Component {
   constructor(props) {
@@ -62,20 +64,18 @@ class AddCategory extends Component {
         <Modal
           trigger={
             <div onClick={this.openModal} className="add-category">
-              <svg className="add-category-svg">
-                <image href={`${add_category}`} />
-              </svg>
+              <Icon styleProps="add-category-svg" name="add_category.svg"/>
               PRIDAŤ KATEGÓRIU
             </div>
           }
           size="small"
           open={this.state.showModal}
           onClose={this.closeModal}
-          closeIcon
         >
           <Modal.Content>
             <div className="add-category-header">
               PRIDAŤ KATEGÓRIU
+              <CloseIcon customClickEvent={this.closeModal} />
             </div>
             <form action="" onSubmit={this.handleSubmit}>
               <div className="category-form">
@@ -89,9 +89,7 @@ class AddCategory extends Component {
                 />
                 <span className="submit-button" >
                   <Button>
-                    <svg className="add-svg" height="14" width="14">
-                      <image href={`${add}`} />
-                    </svg>
+                      <Icon styleProps="add-svg" name="add.svg" />
                     <span className="add-category-button-message">PRIDAŤ</span>
                   </Button>
                 </span>
