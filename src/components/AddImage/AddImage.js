@@ -6,6 +6,7 @@ import ModalContent from 'semantic-ui-react';
 import Dropzone from 'react-dropzone';
 import add_photo from '../../icons/icon.svg';
 import Icon from '../Icon';
+import CloseIcon from '../CloseIcon/CloseIcon';
 
 class AddImage extends Component {
   constructor(props) {
@@ -63,10 +64,7 @@ class AddImage extends Component {
         >
           <div className="add-image-header">
             PRIDAŤ FOTKY
-            <div className="close-modal" >
-              <Icon styleProps="close-svg" name="close.svg" customClickEvent={this.closeModal} />
-              <span className="close-icon-message">ZAVRIEŤ</span>
-            </div>
+            <CloseIcon customClickEvent={this.closeModal} />
           </div>
           <Modal.Content>
             <form onSubmit={this.handleSubmit}>
