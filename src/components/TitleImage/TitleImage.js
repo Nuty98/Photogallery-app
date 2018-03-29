@@ -1,14 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './TitleImage.css';
+import { Link } from 'react-router-dom';
+import Icon from '../Icon';
 
 const TitleImage = ({ currentImage, currentPage }) => {
-  let color;
+  let color, backImage;
   if(currentImage === null) {
     color = "black";
+    backImage = "back_black.svg"
   } else {
     color = "white";
+    backImage = "back_white.svg"
   }
+
+  let icon = null;
+  if(currentPage !== "Kategórie") {
+    icon = <Link to="/"><Icon name={`${backImage}`} styleProps="back-svg" /></Link>
+  }
+
   return (
       <div id="title-image-container">
         <div
@@ -18,7 +28,10 @@ const TitleImage = ({ currentImage, currentPage }) => {
 
       <div className="header-container">
         <div className="header" style={{color: `${color}`}}>Fotogaléria</div>
-        <div className="actual-page-name" style={{color: `${color}`}}>{currentPage}</div>
+        <div className="actual-page-name" style={{color: `${color}`}}>
+          {icon}
+          {currentPage}
+        </div>
         <hr id="index-page-line" />
       </div>
     </div>
@@ -26,7 +39,7 @@ const TitleImage = ({ currentImage, currentPage }) => {
 };
 
 TitleImage.propTypes = {
-  currentImage: PropTypes.string.isRequired,
+  currentImage: PropTypes.string,
 };
 
 export default TitleImage;
