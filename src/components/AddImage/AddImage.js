@@ -81,7 +81,7 @@ class AddImage extends Component {
                 </Dropzone>
                 <div className="file-input-image">
                   <label id="label-image-input" htmlFor="upload-image-input">
-                    VYBERTE SÚBORY
+                    <span className="label-text">VYBERTE SÚBORY</span>
                   </label>
                   <input
                     type="file"

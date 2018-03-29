@@ -5,20 +5,22 @@
 
 .close-svg:hover {
   cursor: pointer;
+  color: #eeeeee;
 }
 
 .close-modal {
-  position: relative;
+  position: absolute;
   display: flex;
   justify-content: center;
-  left: 625px;
-  bottom: 93px;
-  margin: 0;
-  width: 100px;
+  top: -34px;
+  right: -14px; 
   vertical-align: middle;
-  line-height: 31px;
   letter-spacing: 0.8px;
   color: #ffffff;
+}
+
+.add-image-header .close-modal {
+  right: 12px;
 }
 
 .close-icon-message {
@@ -27,30 +29,8 @@
   font-size: 16px;
 }
 
-
-@media only screen and (max-width: 1919px){
-  .close-modal {
-    left: 580px;
-  }
-}
-
-@media only screen and (max-width: 1199px) {
-  .close-modal {
-    left: 560px;
-  }
-}
-
-@media only screen and (max-width: 991px) {
-  .close-modal {
-    left: 85%;
-  }
-}
-
 @media only screen and (max-width: 767px) {
-  .close-modal {
-    left: 87%;
-  }
   .add-category-header .close-modal {
-    bottom: 107px;
+    top: -46px;
   }
 }

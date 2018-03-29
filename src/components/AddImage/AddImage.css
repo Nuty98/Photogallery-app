@@ -82,14 +82,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0px;
+  margin: 10px 0px;
 }
 
 #label-image-input {
   cursor: pointer;
   border: 3px solid #aaaaaa;
   border-radius: 4px;
-  padding: 10px 0px 15px;
   width: 213px;
   height: 48px;
   display: flex;
@@ -103,9 +102,9 @@
   background: #f9f9f9;
 }
 
-.submit-button-image {
-  display: flex;
-  height: 40px;
+.label-text {
+  position: relative;
+  top: 6px;
 }
 
 .button-div {
@@ -119,6 +118,8 @@
   position: relative;
   bottom: 2px;
   left: 3px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .add-image-svg {
