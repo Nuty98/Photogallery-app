@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './AddImage.css';
-import { Grid, Modal, Header, Button, Icon } from 'semantic-ui-react';
+import { Grid, Modal, Button } from 'semantic-ui-react';
 import ModalContent from 'semantic-ui-react';
 import Dropzone from 'react-dropzone';
 import add_photo from '../../icons/icon.svg';
+import Icon from '../Icon';
 
 class AddImage extends Component {
   constructor(props) {
@@ -14,6 +15,18 @@ class AddImage extends Component {
       showModal: false,
       imagesToAdd: [],
     };
+  }
+
+  openModal = () => {
+    this.setState({
+      showModal: true
+    })
+  }
+
+  closeModal = () => {
+    this.setState({
+      showModal: false
+    })
   }
 
   handleChange = e => {
@@ -39,17 +52,22 @@ class AddImage extends Component {
       <Grid.Column mobile={16} tablet={8} computer={4}>
         <Modal
           trigger={
-            <div className="add-image">
-              <svg className="add-photo">
-                <image href={`${add_photo}`} />
-              </svg>
+            <div className="add-image" onClick={this.openModal}>
+              <Icon styleProps="add-photo" name="icon.svg" />
               <strong>PRIDAŤ FOTKY</strong>
             </div>
           }
+          onClose={this.closeModal}
+          open={this.state.showModal}
           size="small"
-          closeIcon
         >
-          <div className="add-image-header">PRIDAŤ FOTKY</div>
+          <div className="add-image-header">
+            PRIDAŤ FOTKY
+            <div className="close-modal" >
+              <Icon styleProps="close-svg" name="close.svg" customClickEvent={this.closeModal} />
+              <span className="close-icon-message">ZAVRIEŤ</span>
+            </div>
+          </div>
           <Modal.Content>
             <form onSubmit={this.handleSubmit}>
               <div className="add-image-form">
@@ -59,9 +77,8 @@ class AddImage extends Component {
                   onDrop={this.onImageDrop}
                   className="dropzone"
                 >
-                  <div>
-                    <strong>SEM PRESUŇTE FOTKY</strong>
-                  </div>
+                  <Icon styleProps="add-photo" name="icon.svg" />
+                  <div className="dropzone-message">SEM PRESUŇTE FOTKY</div>
                   <div>alebo</div>
                 </Dropzone>
                 <div className="file-input-image">
@@ -78,7 +95,10 @@ class AddImage extends Component {
               </div>
 
               <div className="button-div">
-                <Button>PRIDAŤ</Button>
+                <Button>
+                  <Icon styleProps="add-image-svg" name="add.svg" />
+                  <span className="button-message">PRIDAŤ</span>
+                </Button>
               </div>
             </form>
           </Modal.Content>

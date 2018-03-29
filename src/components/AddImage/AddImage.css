@@ -44,12 +44,65 @@
   letter-spacing: 1.2px;
 }
 
+.close-svg {
+  width: 28px;
+  height: 28px;
+}
+
+.close-svg:hover {
+  cursor: pointer;
+}
+
+.close-modal {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  left: 625px;
+  bottom: 93px;
+  margin: 0;
+  width: 100px;
+  vertical-align: middle;
+  line-height: 31px;
+  letter-spacing: 0.8px;
+  color: #ffffff;
+}
+
+.close-icon-message {
+  position: relative;
+  left: 10px;
+  font-size: 16px;
+}
+
+
+@media only screen and (max-width: 1919px){
+  .close-modal {
+    left: 580px;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .close-modal {
+    left: 560px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .close-modal {
+    left: 85%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .close-modal {
+    left: 87%;
+  }
+}
+
 .add-image-form {
   border: 2px dashed #eeeeee;
   color: #aaaaaa;
   height: 247px;
 }
-
 
 .dropzone {
   display: flex;
@@ -59,7 +112,17 @@
   border: none;
   width: 100%;
   height: 150px;
-  font-size: 1.3em;
+  letter-spacing: 0.8px;
+}
+
+
+.dropzone-message {
+  text-align: center;
+  width: 190px;
+  heigth: 36px;
+  font-size: 16px;
+  line-height: 31px;
+  font-weight: 700;
 }
 
 
@@ -104,6 +167,19 @@
   justify-content: flex-end;
   height: 90px;
   align-items: center;
+}
+
+.button-message {
+  position: relative;
+  bottom: 2px;
+  left: 3px;
+}
+
+.add-image-svg {
+  position: relative;
+  right: 3px;
+  height: 14px;
+  width: 14px;
 }
 
 .ui .button-div .button {
