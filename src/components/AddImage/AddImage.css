@@ -4,19 +4,27 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 226px;
-  border: 1.5px solid #eeeeee;
-  border-radius: 5px;
-  line-height: 30px;
+  height: 215px;
+  border: 3px solid #eeeeee;
+  border-radius: 4px;
+  line-height: 31px;
   font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
   color: #aaaaaa;
   transition: 0.3s ease-out;
   background: white;
 }
 
 .add-image:hover {
-  transform: translate(0, -12px);
+  transform: translate(0, -10px);
   cursor: pointer;
+}
+
+.add-photo {
+  height: 42px;
+  width: 46px;
+  margin-bottom: 16px;
 }
 
 @media only screen and (max-width: 767px) and (min-width: 320px){
@@ -26,9 +34,20 @@
   }
 }
 
+.add-image-header {
+  height: 96px;
+  padding: 30px;
+  padding-bottom: 0;
+  line-height: 31px;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+}
+
 .add-image-form {
   border: 2px dashed #eeeeee;
   color: #aaaaaa;
+  height: 247px;
 }
 
 
@@ -59,18 +78,20 @@
 
 #label-image-input {
   cursor: pointer;
-  border: 2.5px solid #aaaaaa;
-  border-radius: .28571429rem;
+  border: 3px solid #aaaaaa;
+  border-radius: 4px;
   padding: 10px 0px 15px;
-  width: 200px;
-  height: 45px;
-  text-align: center;
-  vertical-align: middle;
+  width: 213px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  line-height: 31px;
   font-weight: 500;
+  letter-spacing: 0.8px;
 }
 
 #label-image-input:hover {
-  background: #e5eae7;
+  background: #f9f9f9;
 }
 
 .submit-button-image {
