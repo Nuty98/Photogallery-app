@@ -31,7 +31,7 @@ class GalleryShow extends Component {
       })
       .then(
         data => {
-          let titleImage;
+          let titleImage = null;
           if (data.images.length > 0)
             titleImage = `http://api.programator.sk/images/0x0/${
               data.images[0].fullpath
@@ -54,6 +54,7 @@ class GalleryShow extends Component {
 
   render() {
     const { error, isLoaded, images, titleImage } = this.state;
+    console.log(this.props.match.params.id);
     const imageUrls = images.map((image, key) => `http://api.programator.sk/images/1024x576/${image.fullpath}`);
     if (error) {
       return error.message === '404' ? <NotFound /> : <UndefinedError />;
@@ -62,7 +63,7 @@ class GalleryShow extends Component {
     }
     return (
       <div>
-        <TitleImage currentImage={titleImage} />
+        <TitleImage currentImage={titleImage} currentPage={this.props.match.params.id}/>
         <GalleryList
           images={images}
           type="show"

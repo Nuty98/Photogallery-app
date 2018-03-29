@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 import './TitleImage.css';
 
 const TitleImage = ({ currentImage, currentPage }) => {
+  let color;
+  if(currentImage === null) {
+    color = "black";
+  } else {
+    color = "white";
+  }
   return (
       <div id="title-image-container">
         <div
@@ -11,8 +17,8 @@ const TitleImage = ({ currentImage, currentPage }) => {
         />
 
       <div className="header-container">
-        <div className="header">Fotogaléria</div>
-        <div className="actual-page-name">Kategórie</div>
+        <div className="header" style={{color: `${color}`}}>Fotogaléria</div>
+        <div className="actual-page-name" style={{color: `${color}`}}>{currentPage}</div>
         <hr id="index-page-line" />
       </div>
     </div>

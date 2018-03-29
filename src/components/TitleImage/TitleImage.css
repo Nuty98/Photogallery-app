@@ -1,6 +1,6 @@
 #title-image-container {
   width: 100%;
-  height: 380px;
+  height: 338px;
   overflow: hidden;
 }
 
@@ -19,43 +19,50 @@
 .header-container {
   position: absolute;
   padding: 15px;
-  top: -100px;
+  top: -70px;
   left: 0;
   right: 0;
   margin: auto;
   height: 380px;
-  font-size: 24px;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
   line-height: 31px;
 }
 
 .header {
   position: relative;
-  top: 168px;
+  top: 131px;
+  widows: 168px;
+  height: 22px;
   color: white;
   width: 100%;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
 }
 
 .actual-page-name {
   position: relative;
+  top: 197px;
+  width: 90px;
+  height: 15px;
   color: white;
-  top: 198px;
   font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
 }
 
 #index-page-line {
   position: relative;
   color: #eeeeee;
   height: 2px;
-  top: 245px;
+  top: 212px;
   box-sizing: inherit;
   opacity: 0.2;
 }
 
 @media only screen and (min-width: 1200px){
   .header-container {
-    width: calc(1127px + 2rem)!important;
+    width: 1170px !important;
   }
 }
 

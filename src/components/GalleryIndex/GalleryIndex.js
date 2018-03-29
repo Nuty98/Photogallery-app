@@ -95,7 +95,7 @@ class GalleryIndex extends Component {
     }
     return (
       <div>
-        <TitleImage currentImage={titleImage} />
+        <TitleImage currentImage={titleImage} currentPage={"Kategórie"}/>
         <GalleryList
           galleries={galleries}
           type="index"
