@@ -30,8 +30,7 @@ class CategoryItem extends Component {
     let url;
     if (imagePath)
       url = `http://api.programator.sk/images/1024x576/${imagePath}`;
-    else 
-    url = require('../../photos/placeholder_image.gif');
+    else url = require('../../photos/placeholder_image.gif');
 
     const galleryLengthMessage = this.getGalleryLengthMessage(galleryLength);
     return (

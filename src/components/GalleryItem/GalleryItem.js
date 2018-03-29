@@ -4,10 +4,14 @@ import { Grid } from 'semantic-ui-react';
 import './GalleryItem.css';
 
 const GalleryItem = ({ imagePath, index, handleGalleryItemClick }) => {
-  
   return (
     <Grid.Column mobile={16} tablet={8} computer={4}>
-      <div className="gallery-item" onClick={() => {handleGalleryItemClick(index)}}>
+      <div
+        className="gallery-item"
+        onClick={() => {
+          handleGalleryItemClick(index);
+        }}
+      >
         <div className="img-container">
           <img
             alt=""
@@ -22,7 +26,7 @@ const GalleryItem = ({ imagePath, index, handleGalleryItemClick }) => {
 GalleryItem.propTypes = {
   imagePath: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
-  handleGalleryItemClick: PropTypes.func.isRequired
-}
+  handleGalleryItemClick: PropTypes.func.isRequired,
+};
 
 export default GalleryItem;

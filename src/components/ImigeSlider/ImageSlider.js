@@ -7,12 +7,12 @@ class ImageSlider extends Component {
     super(props);
 
     this.state = {
-      photoIndex: 0
-    }
+      photoIndex: 0,
+    };
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({photoIndex: nextProps.clickedPhotoIndex});
+    this.setState({ photoIndex: nextProps.clickedPhotoIndex });
   }
 
   render() {
@@ -25,14 +25,11 @@ class ImageSlider extends Component {
             enableZoom={false}
             mainSrc={images[photoIndex]}
             nextSrc={images[(photoIndex + 1) % images.length]}
-            prevSrc={
-              images[(photoIndex + images.length - 1) % images.length]
-            }
+            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
             onCloseRequest={() => handleClose()}
             onMovePrevRequest={() =>
               this.setState({
-                photoIndex:
-                  (photoIndex + images.length - 1) % images.length,
+                photoIndex: (photoIndex + images.length - 1) % images.length,
               })
             }
             onMoveNextRequest={() =>
@@ -51,7 +48,7 @@ ImageSlider.propTypes = {
   images: PropTypes.array.isRequired,
   isSliderOpen: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
-  clickedPhotoIndex: PropTypes.number
-}
+  clickedPhotoIndex: PropTypes.number,
+};
 
 export default ImageSlider;

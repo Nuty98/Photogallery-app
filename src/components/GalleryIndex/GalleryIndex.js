@@ -24,12 +24,10 @@ class GalleryIndex extends Component {
 
   compareGalleries = (first, second) => {
     return first.name.localeCompare(second.name);
-  }
+  };
 
   findGalleryLength = (gallery, index) => {
-    const url = `http://api.programator.sk/gallery/${
-      gallery.path
-    }`;
+    const url = `http://api.programator.sk/gallery/${gallery.path}`;
     fetch(url)
       .then(res => {
         if (res.status !== 200) throw new Error(res.status);
@@ -38,12 +36,11 @@ class GalleryIndex extends Component {
       .then(
         data => {
           let galleries = this.state.galleries;
-          galleries[index].length = data.images.length
+          galleries[index].length = data.images.length;
           this.setState({
             isLoaded: true,
-            galleries
-          })
-
+            galleries,
+          });
         },
         error => {
           this.setState({
@@ -51,8 +48,8 @@ class GalleryIndex extends Component {
             error,
           });
         },
-      )
-  }
+      );
+  };
 
   componentDidMount() {
     const url = 'http://api.programator.sk/gallery';
@@ -75,7 +72,9 @@ class GalleryIndex extends Component {
             galleries: data.galleries,
             titleImage: `http://api.programator.sk/images/0x0/${initTitleImage}`,
           });
-          this.state.galleries.map((gallery, index) => this.findGalleryLength(gallery, index));
+          this.state.galleries.map((gallery, index) =>
+            this.findGalleryLength(gallery, index),
+          );
         },
         error => {
           this.setState({
@@ -95,7 +94,7 @@ class GalleryIndex extends Component {
     }
     return (
       <div>
-        <TitleImage currentImage={titleImage} currentPage={"Kategórie"}/>
+        <TitleImage currentImage={titleImage} currentPage={'Kategórie'} />
         <GalleryList
           galleries={galleries}
           type="index"

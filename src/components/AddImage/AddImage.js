@@ -20,15 +20,15 @@ class AddImage extends Component {
 
   openModal = () => {
     this.setState({
-      showModal: true
-    })
-  }
+      showModal: true,
+    });
+  };
 
   closeModal = () => {
     this.setState({
-      showModal: false
-    })
-  }
+      showModal: false,
+    });
+  };
 
   handleChange = e => {
     let imagesToAddCpy = this.state.imagesToAdd;

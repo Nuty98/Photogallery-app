@@ -6,29 +6,35 @@ import Icon from '../Icon';
 
 const TitleImage = ({ currentImage, currentPage }) => {
   let color, backImage;
-  if(currentImage === null) {
-    color = "black";
-    backImage = "back_black.svg"
+  if (currentImage === null) {
+    color = 'black';
+    backImage = 'back_black.svg';
   } else {
-    color = "white";
-    backImage = "back_white.svg"
+    color = 'white';
+    backImage = 'back_white.svg';
   }
 
   let icon = null;
-  if(currentPage !== "Kategórie") {
-    icon = <Link to="/"><Icon name={`${backImage}`} styleProps="back-svg" /></Link>
+  if (currentPage !== 'Kategórie') {
+    icon = (
+      <Link to="/">
+        <Icon name={`${backImage}`} styleProps="back-svg" />
+      </Link>
+    );
   }
 
   return (
-      <div id="title-image-container">
-        <div
+    <div id="title-image-container">
+      <div
         className="title-image"
         style={{ backgroundImage: `url(${currentImage})` }}
-        />
+      />
 
       <div className="header-container">
-        <div className="header" style={{color: `${color}`}}>Fotogaléria</div>
-        <div className="actual-page-name" style={{color: `${color}`}}>
+        <div className="header" style={{ color: `${color}` }}>
+          Fotogaléria
+        </div>
+        <div className="actual-page-name" style={{ color: `${color}` }}>
           {icon}
           {currentPage}
         </div>

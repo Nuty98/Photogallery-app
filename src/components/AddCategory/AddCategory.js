@@ -64,7 +64,7 @@ class AddCategory extends Component {
         <Modal
           trigger={
             <div onClick={this.openModal} className="add-category">
-              <Icon styleProps="add-category-svg" name="add_category.svg"/>
+              <Icon styleProps="add-category-svg" name="add_category.svg" />
               PRIDAŤ KATEGÓRIU
             </div>
           }
@@ -87,9 +87,9 @@ class AddCategory extends Component {
                   className="add-category-input"
                   required
                 />
-                <span className="submit-button" >
+                <span className="submit-button">
                   <Button>
-                      <Icon styleProps="add-svg" name="add.svg" />
+                    <Icon styleProps="add-svg" name="add.svg" />
                     <span className="add-category-button-message">PRIDAŤ</span>
                   </Button>
                 </span>

@@ -6,6 +6,6 @@ const Icon = ({ name, styleProps, customClickEvent }) => {
       <image href={require(`../icons/${name}`)} />
     </svg>
   );
-}
+};
 
 export default Icon;

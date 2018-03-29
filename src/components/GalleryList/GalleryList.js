@@ -5,8 +5,7 @@ import CategoryItem from '../CategoryItem/CategoryItem';
 import AddCategory from '../AddCategory/AddCategory';
 import AddImage from '../AddImage/AddImage';
 import { Grid } from 'semantic-ui-react';
-import './GalleryList.css'
-
+import './GalleryList.css';
 
 class GalleryList extends Component {
   handleMouseEnter = imagePath => {
@@ -33,7 +32,13 @@ class GalleryList extends Component {
           );
         } else {
           return (
-            <CategoryItem key={i} categoryName={gallery.name} categoryPath={gallery.path} imagePath={null} galleryLength={0}/>
+            <CategoryItem
+              key={i}
+              categoryName={gallery.name}
+              categoryPath={gallery.path}
+              imagePath={null}
+              galleryLength={0}
+            />
           );
         }
       });
@@ -65,7 +70,7 @@ class GalleryList extends Component {
     return (
       <Grid container>
         {items}
-        <AddImage category={this.props.category}/>
+        <AddImage category={this.props.category} />
       </Grid>
     );
   }
@@ -76,7 +81,7 @@ GalleryList.propTypes = {
   galleries: PropTypes.array,
   images: PropTypes.array,
   handleMouseEnter: PropTypes.func,
-  handleGalleryItemClick: PropTypes.func
-}
+  handleGalleryItemClick: PropTypes.func,
+};
 
 export default GalleryList;

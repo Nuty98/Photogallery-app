@@ -16,7 +16,7 @@ class GalleryShow extends Component {
       images: [],
       titleImage: null,
       isSliderOpen: false,
-      clickedPhotoIndex: null
+      clickedPhotoIndex: null,
     };
   }
 
@@ -49,12 +49,15 @@ class GalleryShow extends Component {
             error,
           });
         },
-      )
+      );
   }
 
   render() {
     const { error, isLoaded, images, titleImage } = this.state;
-    const imageUrls = images.map((image, key) => `http://api.programator.sk/images/1024x576/${image.fullpath}`);
+    const imageUrls = images.map(
+      (image, key) =>
+        `http://api.programator.sk/images/1024x576/${image.fullpath}`
+    );
     if (error) {
       return error.message === '404' ? <NotFound /> : <UndefinedError />;
     } else if (!isLoaded) {
@@ -62,13 +65,16 @@ class GalleryShow extends Component {
     }
     return (
       <div>
-        <TitleImage currentImage={titleImage} currentPage={this.props.match.params.id}/>
+        <TitleImage
+          currentImage={titleImage}
+          currentPage={this.props.match.params.id}
+        />
         <GalleryList
           images={images}
           type="show"
           category={this.props.match.params.id}
-          handleGalleryItemClick={(index) => {
-            this.setState({ isSliderOpen: true, clickedPhotoIndex: index});
+          handleGalleryItemClick={index => {
+            this.setState({ isSliderOpen: true, clickedPhotoIndex: index });
           }}
         />
         <ImageSlider
