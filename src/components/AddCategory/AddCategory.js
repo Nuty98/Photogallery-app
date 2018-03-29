@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import { Grid, Modal, Header, Button, Icon } from 'semantic-ui-react';
-import styling from './AddCategory.css'
+import { Grid, Modal, Button, Icon } from 'semantic-ui-react';
+import styling from './AddCategory.css';
+import add_category from '../../icons/add_category.svg';
+import add from '../../icons/add.svg';
 
 class AddCategory extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      categoryName: "",
-      showModal: false
+      categoryName: '',
+      showModal: false,
     };
   }
 
@@ -44,36 +46,42 @@ class AddCategory extends Component {
 
   openModal = () => {
     this.setState({
-      showModal: true
-    })
-  }
+      showModal: true,
+    });
+  };
 
   closeModal = () => {
     this.setState({
-      showModal: false
-    })
-  }
-  
+      showModal: false,
+    });
+  };
+
   render() {
     return (
       <Grid.Column mobile={16} tablet={8} computer={4}>
         <Modal
           trigger={
-                    <div onClick={this.openModal}  className="add-category">      
-                      <svg className="add-category-svg">
-                        <image href={require("../../icons/add_category.svg")} height="40" width="40" 
-                        style={{fill: "#aaaaaa"}} />
-                      </svg>
-                      PRIDAŤ KATEGÓRIU
-                    </div>
-                  }
+            <div onClick={this.openModal} className="add-category">
+              <svg className="add-category-svg">
+                <image
+                  href={`${add_category}`}
+                  height="40"
+                  width="40"
+                />
+              </svg>
+              PRIDAŤ KATEGÓRIU
+            </div>
+          }
           size="small"
-          closeIcon
           open={this.state.showModal}
           onClose={this.closeModal}
+          closeIcon
         >
-          <Header>PRIDAŤ KATEGÓRIU</Header>
           <Modal.Content>
+            <div className="add-category-header">
+              PRIDAŤ KATEGÓRIU
+              
+            </div>
             <form action="" onSubmit={this.handleSubmit}>
               <div className="category-form">
                 <input
@@ -84,13 +92,18 @@ class AddCategory extends Component {
                   className="add-category-input"
                   required
                 />
-                <span className="submit-button">
-                  <Button content="PRIDAŤ" icon="plus" />
+                <span className="submit-button" >
+                  <Button>
+                    <svg className="add-svg" height="14" width="14">
+                      <image href={`${add}`} />
+                    </svg>
+                    <span className="add-category-button-message">PRIDAŤ</span>
+                  </Button>
                 </span>
               </div>
             </form>
-            <div id="line-div">        
-              <hr id="modal-line"/>
+            <div id="line-div">
+              <hr id="modal-line" />
             </div>
           </Modal.Content>
         </Modal>

@@ -1,8 +1,8 @@
 .add-category {
   width: 100%;
   height: 215px;
-  border: 1.5px solid #eeeeee;
-  border-radius: 5px;
+  border: 3px solid #eeeeee;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,35 +33,63 @@
   transform: translate(0, -12px);
 }
 
-
 .category-form {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
   height: 50px;
+}
+
+.add-category-header {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  line-height: 31px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.close-svg {
+  position: relative;
+  margin-left: 30px;
+  margin-bottom: 40px; 
 }
 
 .add-category-input {
-  width: 80%;
-  border: none;
+  width: 78%;
+  line-height: 31px;
+  letter-spacing: 0.8px;
   font-weight: 500;
-  height: 50px;
-  
+  line-height: 31px;
+  border: none;
 }
 
+.add-category-input:focus {
+  outline: none;
+}
+
+.add-svg {
+  margin-top: 3px;
+}
+
+.add-category-button-message {
+  padding-left: 5px;
+  padding-bottom: 10px;
+  line-height: 31px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 31px;
+}
 .ui .button {
   background-color: #42c88d;
   color: white;
-  height: 45px;
+  height: 48px;
+  width: 136px;
 }
 
 .ui .button:hover {
   background-color: #45b272;
   color: white;
-}
-
-.ui.modal > .header {
-  border-bottom: none;
-  font-size: 1.5rem;
 }
 
 #line-div {
