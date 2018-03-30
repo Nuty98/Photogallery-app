@@ -40,15 +40,27 @@
   letter-spacing: 1.2px;
 }
 
-.actual-page-name {
+.page-name-with-link {
   position: relative;
   top: 197px;
-  width: 90px;
+  width: 150px;
   height: 15px;
+  display: flex;
+  justify-content: flex-start;
   color: white;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.8px;
+}
+
+.back-svg {
+  width: 18px;
+  height: 12px;
+}
+
+.page-name {
+  position: relative;
+  left: 14px;
 }
 
 #index-page-line {
@@ -60,10 +72,7 @@
   opacity: 0.2;
 }
 
-.back-svg {
-  width: 18px;
-  height: 12px;
-}
+
 
 @media only screen and (min-width: 1200px){
   .header-container {
@@ -87,11 +96,6 @@
 
 @media only screen and (max-width: 767px) and (min-width: 320px){
   .header-container{
-    width: 319px;
-    display: flex;
-    justify-content: center;
-  }
-  .header {
-    
+    width: auto;
   }
 }

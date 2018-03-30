@@ -34,9 +34,9 @@ const TitleImage = ({ currentImage, currentPage }) => {
         <div className="header" style={{ color: `${color}` }}>
           Fotogaléria
         </div>
-        <div className="actual-page-name" style={{ color: `${color}` }}>
+        <div className="page-name-with-link" style={{ color: `${color}` }}>
           {icon}
-          {currentPage}
+          <span className="page-name">{currentPage}</span>
         </div>
         <hr id="index-page-line" />
       </div>
