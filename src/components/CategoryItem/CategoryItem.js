@@ -56,6 +56,11 @@ class CategoryItem extends Component {
   }
 }
 
+CategoryItem.defaultProps = {
+  imagePath: null,
+  handleMouseEnter: null,
+};
+
 CategoryItem.propTypes = {
   categoryName: PropTypes.string.isRequired,
   categoryPath: PropTypes.string.isRequired,

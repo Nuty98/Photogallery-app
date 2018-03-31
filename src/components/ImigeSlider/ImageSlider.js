@@ -44,6 +44,10 @@ class ImageSlider extends Component {
   }
 }
 
+ImageSlider.defaultProps = {
+  clickedPhotoIndex: null
+}
+
 ImageSlider.propTypes = {
   images: PropTypes.array.isRequired,
   isSliderOpen: PropTypes.bool.isRequired,

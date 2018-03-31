@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Icon from '../Icon';
 import './CloseIcon.css';
 
-const closeIcon = ({ customClickEvent }) => {
+const CloseIcon = ({ customClickEvent }) => {
   return (
     <div className="close-modal">
       <Icon
@@ -15,4 +16,12 @@ const closeIcon = ({ customClickEvent }) => {
   );
 };
 
-export default closeIcon;
+CloseIcon.defaultProps = {
+  customClickEvent: null
+}
+
+CloseIcon.propTypes = {
+  customClickEvent: PropTypes.func
+}
+
+export default CloseIcon;
