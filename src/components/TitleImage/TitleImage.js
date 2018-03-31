@@ -14,13 +14,17 @@ const TitleImage = ({ currentImage, currentPage }) => {
     backImage = 'back_white.svg';
   }
 
-  let icon = null;
+  let icon = null, pageNameStyle;
   if (currentPage !== 'Kategórie') {
     icon = (
       <Link to="/">
         <Icon name={`${backImage}`} styleProps="back-svg" />
       </Link>
     );
+    pageNameStyle = {
+      position: "relative",
+      left: "14px",
+    }
   }
 
   return (
@@ -36,7 +40,7 @@ const TitleImage = ({ currentImage, currentPage }) => {
         </div>
         <div className="page-name-with-link" style={{ color: `${color}` }}>
           {icon}
-          <span className="page-name">{currentPage}</span>
+          <span style={pageNameStyle}>{currentPage}</span>
         </div>
         <hr id="index-page-line" />
       </div>
@@ -44,8 +48,13 @@ const TitleImage = ({ currentImage, currentPage }) => {
   );
 };
 
+TitleImage.defaultProps = {
+  currentImage: null
+}
+
 TitleImage.propTypes = {
   currentImage: PropTypes.string,
+  currentPage: PropTypes.string.isRequired
 };
 
 export default TitleImage;
