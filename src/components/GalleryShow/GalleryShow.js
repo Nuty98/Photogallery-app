@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GalleryList from '../GalleryList/GalleryList';
-import NotFound from '../NotFound';
+import NotFound from '../NotFound/NotFound';
 import UndefinedError from '../UndefinedError';
 import Loader from '../Loader/Loader';
 import TitleImage from '../TitleImage/TitleImage';

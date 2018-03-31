@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import GalleryIndex from '../GalleryIndex/GalleryIndex';
 import GalleryShow from '../GalleryShow/GalleryShow';
-import NotFound from '../NotFound';
+import NotFound from '../NotFound/NotFound';
 
 const Routes = () => {
   return (
