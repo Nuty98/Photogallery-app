@@ -4,6 +4,7 @@ import GalleryItem from '../GalleryItem/GalleryItem';
 import CategoryItem from '../CategoryItem/CategoryItem';
 import AddCategory from '../AddCategory/AddCategory';
 import AddImage from '../AddImage/AddImage';
+import Footer from '../Footer/Footer';
 import { Grid } from 'semantic-ui-react';
 import './GalleryList.css';
 
@@ -63,6 +64,7 @@ class GalleryList extends Component {
         <Grid container>
           {items}
           <AddCategory />
+          <Footer />
         </Grid>
       );
     }
@@ -71,6 +73,7 @@ class GalleryList extends Component {
       <Grid container>
         {items}
         <AddImage category={this.props.category} />
+        <Footer />
       </Grid>
     );
   }
