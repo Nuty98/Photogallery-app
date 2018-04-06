@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Lightbox from 'react-image-lightbox';
+import './ImageSlider.css';
 
 class ImageSlider extends Component {
   constructor(props) {
@@ -15,6 +16,20 @@ class ImageSlider extends Component {
     this.setState({ photoIndex: nextProps.clickedPhotoIndex });
   }
 
+  movePrevRequest = () => {
+    if (this.state.photoIndex !== 0)
+      this.setState({
+        photoIndex: (this.state.photoIndex - 1) % this.props.images.length,
+      });
+  };
+
+  moveNextRequest = () => {
+    if (this.state.photoIndex !== this.props.images.length - 1)
+      this.setState({
+        photoIndex: (this.state.photoIndex + 1) % this.props.images.length,
+      });
+  };
+
   render() {
     const { photoIndex } = this.state;
     const { images, isSliderOpen, handleClose } = this.props;
@@ -27,16 +42,8 @@ class ImageSlider extends Component {
             nextSrc={images[(photoIndex + 1) % images.length]}
             prevSrc={images[(photoIndex + images.length - 1) % images.length]}
             onCloseRequest={() => handleClose()}
-            onMovePrevRequest={() =>
-              this.setState({
-                photoIndex: (photoIndex + images.length - 1) % images.length,
-              })
-            }
-            onMoveNextRequest={() =>
-              this.setState({
-                photoIndex: (photoIndex + 1) % images.length,
-              })
-            }
+            onMovePrevRequest={this.movePrevRequest}
+            onMoveNextRequest={this.moveNextRequest}
           />
         )}
       </div>
@@ -45,8 +52,8 @@ class ImageSlider extends Component {
 }
 
 ImageSlider.defaultProps = {
-  clickedPhotoIndex: null
-}
+  clickedPhotoIndex: null,
+};
 
 ImageSlider.propTypes = {
   images: PropTypes.array.isRequired,

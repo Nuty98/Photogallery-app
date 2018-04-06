@@ -1,0 +1,30 @@
+.ril__toolbar {
+  background: none !important;
+  padding: 0 !important;
+}
+
+.ril__closeButton {
+  background: url('../../icons/close.svg') no-repeat !important;
+}
+
+.ril__image {
+  width: 720px;
+  height: 520px;;
+}
+
+.ril__navButtonPrev {
+  background: url('../../icons/prev.svg') no-repeat !important;
+  width: 15px !important;
+  height: 24px !important;
+  left: 10px !important;
+  padding: 0 !important;
+}
+
+.ril__navButtonNext {
+  background: url('../../icons/next.svg') no-repeat !important;
+  width: 15px !important;
+  height: 24px !important;
+  right:  10px !important;
+  padding: 0 !important;
+}
+

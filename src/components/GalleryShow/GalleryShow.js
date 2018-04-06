@@ -4,7 +4,7 @@ import NotFound from '../NotFound/NotFound';
 import UndefinedError from '../UndefinedError';
 import Loader from '../Loader/Loader';
 import TitleImage from '../TitleImage/TitleImage';
-import ImageSlider from '../ImigeSlider/ImageSlider';
+import ImageSlider from '../ImageSlider/ImageSlider';
 
 class GalleryShow extends Component {
   constructor(props) {
