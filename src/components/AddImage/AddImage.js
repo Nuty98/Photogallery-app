@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './AddImage.css';
+import './AddImage.css';
 import { Grid, Modal, Button } from 'semantic-ui-react';
-import ModalContent from 'semantic-ui-react';
 import Dropzone from 'react-dropzone';
-import add_photo from '../../icons/icon.svg';
 import Icon from '../IconComponent/Icon';
 import CloseIcon from '../CloseIcon/CloseIcon';
 

@@ -5,9 +5,11 @@ import './Footer.css';
 const Footer = () => {
   return (
     <Grid.Row>
-      <div className="footer">webdesign bart.sk</div>
+      <Grid.Column mobile={16} tablet={8} computer={4} className="footer">
+        <div className="gallery-item">webdesign bart.sk</div>
+      </Grid.Column>
     </Grid.Row>
   );
-}
+};
 
 export default Footer;
