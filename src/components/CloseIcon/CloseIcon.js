@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../Icon';
+import Icon from '../IconComponent/Icon';
 import './CloseIcon.css';
 
 const CloseIcon = ({ customClickEvent }) => {

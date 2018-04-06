@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './TitleImage.css';
 import { Link } from 'react-router-dom';
-import Icon from '../Icon';
+import Icon from '../IconComponent/Icon';
 
 const TitleImage = ({ currentImage, currentPage }) => {
   let color, backImage;
@@ -14,7 +14,8 @@ const TitleImage = ({ currentImage, currentPage }) => {
     backImage = 'back_white.svg';
   }
 
-  let icon = null, pageNameStyle;
+  let icon = null,
+    pageNameStyle;
   if (currentPage !== 'Kategórie') {
     icon = (
       <Link to="/">
@@ -22,9 +23,9 @@ const TitleImage = ({ currentImage, currentPage }) => {
       </Link>
     );
     pageNameStyle = {
-      position: "relative",
-      left: "14px",
-    }
+      position: 'relative',
+      left: '14px',
+    };
   }
 
   return (
@@ -49,12 +50,12 @@ const TitleImage = ({ currentImage, currentPage }) => {
 };
 
 TitleImage.defaultProps = {
-  currentImage: null
-}
+  currentImage: null,
+};
 
 TitleImage.propTypes = {
   currentImage: PropTypes.string,
-  currentPage: PropTypes.string.isRequired
+  currentPage: PropTypes.string.isRequired,
 };
 
 export default TitleImage;

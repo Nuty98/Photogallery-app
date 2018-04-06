@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
-import Icon from '../Icon';
+import Icon from '../IconComponent/Icon';
 import './NotFound.css';
 
 const NotFound = () => (

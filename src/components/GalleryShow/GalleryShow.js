@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GalleryList from '../GalleryList/GalleryList';
-import NotFound from '../NotFound/NotFound';
-import UndefinedError from '../UndefinedError';
+import NotFound from '../NotFoundError/NotFound';
+import UndefinedError from '../UndefinedError/UndefinedError';
 import Loader from '../Loader/Loader';
 import TitleImage from '../TitleImage/TitleImage';
 import ImageSlider from '../ImageSlider/ImageSlider';
@@ -56,7 +56,7 @@ class GalleryShow extends Component {
     const { error, isLoaded, images, titleImage } = this.state;
     const imageUrls = images.map(
       (image, key) =>
-        `http://api.programator.sk/images/1024x576/${image.fullpath}`
+        `http://api.programator.sk/images/1024x576/${image.fullpath}`,
     );
     if (error) {
       return error.message === '404' ? <NotFound /> : <UndefinedError />;
