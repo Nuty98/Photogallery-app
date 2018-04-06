@@ -1,7 +1,15 @@
 import React from 'react';
+import './NotFound/NotFound.css';
 
 const UndefinedError = () => {
-  return <h4>500 Internal Server Error</h4>;
+  return (
+    <div className="not-found-container">
+      <div className="not-found-header">
+        Je nám ľúto, ale stránka je dočasne nedostupná. Ak by problém pretrvával,
+        kontaktujte prosím administrátora stránky.
+      </div>
+    </div>
+  );
 };
 
 export default UndefinedError;
