@@ -1,0 +1,40 @@
+.not-found-container {
+  width: 1170px;
+  margin: auto;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  left: 0; 
+}
+
+.not-found-header {
+  margin-bottom: 50px;
+  letter-spacing: 1.2px;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 48px;
+}
+
+.not-found-back-button-message {
+  color: black;
+  margin-left: 6px;
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 992px) {
+  .not-found-container {
+    width: calc(933px + 2rem)!important;
+  }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+  .not-found-container{
+    width: calc(723px + 2rem)!important;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 320px){
+  .not-found-container{
+    width: 70%;
+    margin: auto;
+  }
+}
