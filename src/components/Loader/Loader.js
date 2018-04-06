@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react';
-import styling from './Loader.css';
+import './Loader.css';
 
 const MyLoader = ({ category }) => (
   <div className="loader">
@@ -12,6 +13,14 @@ const MyLoader = ({ category }) => (
     </Segment>
   </div>
 );
+
+MyLoader.defaultProps = {
+  category: null
+}
+
+MyLoader.propTypes = {
+  category: PropTypes.string
+}
 
 export default MyLoader;
 

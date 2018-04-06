@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Modal, Button } from 'semantic-ui-react';
-import styling from './AddCategory.css';
-import add_category from '../../icons/add_category.svg';
-import add from '../../icons/add.svg';
+import './AddCategory.css';
 import Icon from '../Icon';
 import CloseIcon from '../CloseIcon/CloseIcon';
 
