@@ -15,7 +15,7 @@ const GalleryItem = ({ imagePath, index, handleGalleryItemClick }) => {
         <div className="img-container">
           <img
             alt=""
-            src={`http://api.programator.sk/images/0x0/${imagePath}`}
+            src={`http://api.programator.sk/images/1024x576/${imagePath}`}
           />
         </div>
       </div>
