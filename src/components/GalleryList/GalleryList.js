@@ -19,11 +19,11 @@ class GalleryList extends Component {
 
   generateItemList = () => {
     if (this.props.type === 'index') {
-      return this.props.galleries.map((gallery, i) => {
+      return this.props.galleries.map((gallery) => {
         if (gallery.image != null) {
           return (
             <CategoryItem
-              key={i}
+              key={gallery.path}
               categoryName={gallery.name}
               categoryPath={gallery.path}
               imagePath={gallery.image.fullpath}
@@ -34,7 +34,7 @@ class GalleryList extends Component {
         } else {
           return (
             <CategoryItem
-              key={i}
+              key={gallery.path}
               categoryName={gallery.name}
               categoryPath={gallery.path}
               imagePath={null}
@@ -47,7 +47,7 @@ class GalleryList extends Component {
       return this.props.images.map((image, key) => {
         return (
           <GalleryItem
-            key={key}
+            key={image.path}
             index={key}
             imagePath={image.fullpath}
             handleGalleryItemClick={this.handleGalleryItemClick}
