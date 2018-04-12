@@ -55,8 +55,8 @@ class GalleryShow extends Component {
   render() {
     const { error, isLoaded, images, titleImage } = this.state;
     const imageUrls = images.map(
-      (image, key) =>
-        `http://api.programator.sk/images/1024x576/${image.fullpath}`,
+      (image) =>
+        `http://api.programator.sk/images/720x520/${image.fullpath}`,
     );
     if (error) {
       return error.message === '404' ? <NotFound /> : <UndefinedError />;
