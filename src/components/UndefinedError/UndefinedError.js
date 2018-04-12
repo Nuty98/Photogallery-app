@@ -1,5 +1,5 @@
 import React from 'react';
-import '../NotFoundError/NotFound.css';
+import '../pages/NotFoundError/NotFound.css';
 
 const UndefinedError = () => {
   return (

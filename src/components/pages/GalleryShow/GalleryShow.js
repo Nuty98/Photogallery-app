@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import GalleryList from '../GalleryList/GalleryList';
+import GalleryList from '../../GalleryList/GalleryList';
 import NotFound from '../NotFoundError/NotFound';
-import UndefinedError from '../UndefinedError/UndefinedError';
-import Loader from '../Loader/Loader';
-import TitleImage from '../TitleImage/TitleImage';
-import ImageSlider from '../ImageSlider/ImageSlider';
+import UndefinedError from '../../UndefinedError/UndefinedError';
+import Loader from '../../Loader/Loader';
+import TitleImage from '../../TitleImage/TitleImage';
+import ImageSlider from '../../ImageSlider/ImageSlider';
 
 class GalleryShow extends Component {
   constructor(props) {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import GalleryList from '../GalleryList/GalleryList';
-import UndefinedError from '../UndefinedError/UndefinedError';
-import Loader from '../Loader/Loader';
-import TitleImage from '../TitleImage/TitleImage';
+import GalleryList from '../../GalleryList/GalleryList';
+import UndefinedError from '../../UndefinedError/UndefinedError';
+import Loader from '../../Loader/Loader';
+import TitleImage from '../../TitleImage/TitleImage';
 
 class GalleryIndex extends Component {
   constructor(props) {
