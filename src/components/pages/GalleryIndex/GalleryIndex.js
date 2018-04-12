@@ -72,9 +72,9 @@ class GalleryIndex extends Component {
             galleries: data.galleries,
             titleImage: `http://api.programator.sk/images/0x0/${initTitleImage}`,
           });
-          this.state.galleries.map((gallery, index) =>
+          data.galleries.map((gallery, index) =>
             this.findGalleryLength(gallery, index),
-          );
+          );  
         },
         error => {
           this.setState({
