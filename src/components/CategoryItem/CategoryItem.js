@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react';
-import './CategoryItem.css';
+import { API_URL } from '../../constantsFile';
+import './CategoryItem.css'; 
 
 class CategoryItem extends Component {
   handleMouseEnter = () => {
@@ -29,7 +30,7 @@ class CategoryItem extends Component {
     const { imagePath, categoryName, categoryPath, galleryLength } = this.props;
     let url;
     if (imagePath)
-      url = `http://api.programator.sk/images/1024x576/${imagePath}`;
+      url = `${API_URL}/images/1024x576/${imagePath}`;
     else url = require('../../photos/placeholder_image.gif');
 
     const galleryLengthMessage = this.getGalleryLengthMessage(galleryLength);
@@ -46,7 +47,7 @@ class CategoryItem extends Component {
               <img alt="" src={url} />
             </div>
             <div className="category-name">
-              {categoryName.toUpperCase()}{' '}
+              <span className="category-headline">{categoryName.toUpperCase()}</span>
               <span className="length-message">{galleryLengthMessage}</span>
             </div>
           </div>

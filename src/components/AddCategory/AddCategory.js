@@ -3,6 +3,7 @@ import { Grid, Modal, Button } from 'semantic-ui-react';
 import './AddCategory.css';
 import Icon from '../IconComponent/Icon';
 import CloseIcon from '../CloseIcon/CloseIcon';
+import { API_URL } from '../../constantsFile';
 
 class AddCategory extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class AddCategory extends Component {
       'Content-Type': 'application/json',
     });
 
-    fetch('http://api.programator.sk/gallery', {
+    fetch(`${API_URL}}/gallery`, {
       method: 'POST',
       body: newGallery,
       headers: header,

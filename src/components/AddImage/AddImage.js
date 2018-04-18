@@ -5,6 +5,7 @@ import { Grid, Modal, Button } from 'semantic-ui-react';
 import Dropzone from 'react-dropzone';
 import Icon from '../IconComponent/Icon';
 import CloseIcon from '../CloseIcon/CloseIcon';
+import { API_URL } from '../../constantsFile';
 
 class AddImage extends Component {
   constructor(props) {
@@ -45,7 +46,7 @@ class AddImage extends Component {
   };
 
   render() {
-    const url = 'http://api.programator.sk/gallery/';
+    const url = `${API_URL}/gallery/`;
     const { category } = this.props;
     return (
       <Grid.Column mobile={16} tablet={8} computer={4}>

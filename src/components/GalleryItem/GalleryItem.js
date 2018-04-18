@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from 'semantic-ui-react';
+import { API_URL } from '../../constantsFile';
 import './GalleryItem.css';
 
 const GalleryItem = ({ imagePath, index, handleGalleryItemClick }) => {
@@ -15,7 +16,7 @@ const GalleryItem = ({ imagePath, index, handleGalleryItemClick }) => {
         <div className="img-container">
           <img
             alt=""
-            src={`http://api.programator.sk/images/263x215/${imagePath}`}
+            src={`${API_URL}/images/263x215/${imagePath}`}
           />
         </div>
       </div>

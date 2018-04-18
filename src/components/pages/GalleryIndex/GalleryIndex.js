@@ -3,6 +3,7 @@ import GalleryList from '../../GalleryList/GalleryList';
 import UndefinedError from '../../UndefinedError/UndefinedError';
 import Loader from '../../Loader/Loader';
 import TitleImage from '../../TitleImage/TitleImage';
+import { API_URL } from '../../../constantsFile';
 
 class GalleryIndex extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class GalleryIndex extends Component {
 
   changeTitleImg = imagePath => {
     this.setState({
-      titleImage: `http://api.programator.sk/images/0x0/${imagePath}`,
+      titleImage: `${API_URL}/images/0x0/${imagePath}`,
     });
   };
 
@@ -27,7 +28,7 @@ class GalleryIndex extends Component {
   };
 
   findGalleryLength = (gallery, index) => {
-    const url = `http://api.programator.sk/gallery/${gallery.path}`;
+    const url = `${API_URL}/gallery/${gallery.path}`;
     fetch(url)
       .then(res => {
         if (res.status !== 200) throw new Error(res.status);
@@ -52,7 +53,7 @@ class GalleryIndex extends Component {
   };
 
   componentDidMount() {
-    const url = 'http://api.programator.sk/gallery';
+    const url = `${API_URL}/gallery`;
     fetch(url)
       .then(res => {
         if (res.status !== 200) throw new Error(res.status);
@@ -70,7 +71,7 @@ class GalleryIndex extends Component {
           }
           this.setState({
             galleries: data.galleries,
-            titleImage: `http://api.programator.sk/images/0x0/${initTitleImage}`,
+            titleImage: `${API_URL}/images/0x0/${initTitleImage}`,
           });
           data.galleries.map((gallery, index) =>
             this.findGalleryLength(gallery, index),

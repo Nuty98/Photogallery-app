@@ -5,6 +5,7 @@ import UndefinedError from '../../UndefinedError/UndefinedError';
 import Loader from '../../Loader/Loader';
 import TitleImage from '../../TitleImage/TitleImage';
 import ImageSlider from '../../ImageSlider/ImageSlider';
+import { API_URL } from '../../../constantsFile';
 
 class GalleryShow extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class GalleryShow extends Component {
   }
 
   componentDidMount() {
-    const url = `http://api.programator.sk/gallery/${
+    const url = `${API_URL}/gallery/${
       this.props.match.params.id
     }`;
     fetch(url)
@@ -33,7 +34,7 @@ class GalleryShow extends Component {
         data => {
           let titleImage = null;
           if (data.images.length > 0)
-            titleImage = `http://api.programator.sk/images/0x0/${
+            titleImage = `${API_URL}/images/0x0/${
               data.images[0].fullpath
             }`;
 
@@ -56,7 +57,7 @@ class GalleryShow extends Component {
     const { error, isLoaded, images, titleImage } = this.state;
     const imageUrls = images.map(
       (image) =>
-        `http://api.programator.sk/images/720x520/${image.fullpath}`,
+        `${API_URL}/images/720x520/${image.fullpath}`,
     );
     if (error) {
       return error.message === '404' ? <NotFound /> : <UndefinedError />;
